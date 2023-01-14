@@ -2,9 +2,9 @@ const dev = {
 	baseURL: "http://localhost:3080/api/",
 	landingPageUrl: "http://localhost:3080",
 	stripe: {
-		free: "price_1JcQD6HIZYvvnKladKayEvOZ",
-		entry: "price_1JL68HHIZYvvnKlaBJWS5uDe",
-		pro: "price_1JLQhlHIZYvvnKlakrqF8khB"
+		free: "price_1MQDDNEh4b291ZdRdtbpU0gJ",
+		entry: "price_1MQDCIEh4b291ZdRY0zcmH60",
+		pro: "price_1MQB01Eh4b291ZdRwUfMJ4lY"
 	},
 };
   
@@ -12,9 +12,9 @@ const prod = {
 	baseURL: '/api/',
 	landingPageUrl: "https://app.openaitemplate.com",
 	stripe: {
-		free: "price_1JcQsUHIZYvvnKlaEPy958NF",
-		entry: "price_1JLpWpHIZYvvnKlaHxiCr7Js",
-		pro: "price_1JLpWxHIZYvvnKlamATZ7Awm"
+		free: "price_1MKISQKDl4BWQxUPCjluSykk",
+		entry: "price_1MKISQKDl4BWQxUPCjluSykk",
+		pro: "price_1MKISQKDl4BWQxUPCjluSykk"
 	},
 };
   

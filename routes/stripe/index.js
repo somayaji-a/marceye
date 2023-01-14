@@ -14,12 +14,12 @@ let app = express.Router()
 app.post("/webhook", bodyParser.raw({type: 'application/json'}),  async (req, res) => {
 		let data;
 		let eventType;
-		// console.log(`webhook"]`,process.env.STRIPE_WEBHOOK_SECRET)
+		console.log(`webhook"]`,process.env.STRIPE_WEBHOOK_SECRET)
 		// Check if webhook signing is configured.
 		if (process.env.STRIPE_WEBHOOK_SECRET) {
 			// Retrieve the event by verifying the signature using the raw body and secret.
 			let event;
-			// console.log(`req.headers["stripe-signature"]`,req.headers["stripe-signature"])
+			console.log(`req.headers["stripe-signature"]`,req.headers["stripe-signature"])
 			let signature = req.headers["stripe-signature"];
 			try {
 			event = stripe.webhooks.constructEvent(
@@ -46,9 +46,9 @@ app.post("/webhook", bodyParser.raw({type: 'application/json'}),  async (req, re
 		subscription(eventType,data)
 		invoice(eventType,data)
 
-		// if (eventType === "checkout.session.completed") {
-		// 	console.log(`🔔  Payment received!`);
-		// }
+		if (eventType === "checkout.session.completed") {
+			console.log(`🔔  Payment received!`);
+		}
 
 		res.sendStatus(200);
 });

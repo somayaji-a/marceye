@@ -167,6 +167,7 @@ const signin = (req, res) => {
 		  token,
 		  profile
 		});
+		console.log(profile)
 	  });
 };
 
