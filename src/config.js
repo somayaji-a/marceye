@@ -12,9 +12,9 @@ const prod = {
 	baseURL: '/api/',
 	landingPageUrl: "https://app.openaitemplate.com",
 	stripe: {
-		free: "price_1MKISQKDl4BWQxUPCjluSykk",
-		entry: "price_1MKISQKDl4BWQxUPCjluSykk",
-		pro: "price_1MKISQKDl4BWQxUPCjluSykk"
+		free: "price_1MQDDNEh4b291ZdRdtbpU0gJ",
+		entry: "price_1MQDCIEh4b291ZdRY0zcmH60",
+		pro: "price_1MQB01Eh4b291ZdRwUfMJ4lY"
 	},
 };
   
