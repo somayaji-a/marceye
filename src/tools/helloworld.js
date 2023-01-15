@@ -5,9 +5,9 @@ import {
 
 const obj = {
 
-	title: "Hello World",
-	desc: "Analyze your text or documents and convey the important concepts in bullet form.",
-	category: "Programming",
+	title: "Product Title",
+	desc: "Generate a title optimized for your product",
+	category: "Content",
 	Icon: ViewListIcon,
 	// tags: [],
 	permissions: ['user'],
@@ -19,21 +19,21 @@ const obj = {
 	api: "/ai/helloworld",
 
 	output: {
-		title: "Hello World",
-		desc: "The following key points detected",
+		title: "Product Title",
+		desc: "The following title was generated",
 		Icon: false,
 		color: "blue",
 	},
 
 	prompts: [{
 		title:"Entry Text",
-		desc: "A sentence or paragraph you wish to understand in bullet point form.",
+		desc: "A sentence paragraph or keywords that describe your product.",
 		// n: 1,
 		prompts: [{ 
-				title: "Content", 
+				title: "Description", 
 				attr: "content",  
 				value: "", 
-				placeholder: "When doing an your taxes, it's important to...", 
+				placeholder: "Wooden Keyholder with Brass Hooks in a Mountain Shape", 
 				label: "",
 				type: "textarea",
 				maxLength: 600,
@@ -41,11 +41,11 @@ const obj = {
 				min: 3,
 				required: true,
 				error: "",
-				example: "Hello World ",
+				example: "Wooden Keyholder with Brass Hooks in a Mountain Shape",
 			},
 		],
 		example: {
-			output: "Hello World Hello World Hello World Hello World Hello World Hello World Hello World ",
+			output: "Handcrafted Wooden Mountain Keyholder with Brass Hooks",
 			// outputs: [
 			// 	"The sun is very old, over 4.5 billion years",
 			// 	"At 10,000 degrees, sun is also very hot",

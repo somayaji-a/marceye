@@ -54,7 +54,7 @@ class Pricing extends Component {
 				Start now
 			</h2>
 			<p className="text-lg sm:text-xl md:text-2xl text-gray-400 mb-14 mt-2 text-center">
-				Pick a pricing option to begin using enhanceai.ai
+				Pick a pricing option to begin using Marceye.
 			</p></>} 
 
 			<Grid>
@@ -133,22 +133,22 @@ const Entry = ({ fromColor, toColor, baseURL, api }) => <div className="flex rel
 
 <div className="p-8 flex-1">
   <div href="#" className={`text-${fromColor ? fromColor : "green-500"} block text-lg text-2xl leading-tight font-medium mb-2`}>Entry</div>
-  <div className="text-6xl text-black font-bold">$30<span className="text-lg text-gray-400">/per month</span></div>
+  <div className="text-6xl text-black font-bold">$5<span className="text-lg text-gray-400">/per month</span></div>
   <p className="mt-4 text-lg">
-	  Start today to get access to our powerful AI-powered features.
+	  Start today to get access to our powerful AI-powered e-commerce and Etsy features.
   </p>
   <div className="divide-y divide-dashed divide-gray-300 mt-4">
 	  <div className="py-2 flex  items-center">
 		  <DatabaseIcon className={`w-6 h-6 mr-2 text-${fromColor ? fromColor : "green-500"}`} /> 
-		  <div><span className="font-medium text-black">250</span>{` x `}Credits</div>
+		  <div><span className="font-medium text-black">100</span>{` x `}Credits</div>
 	  </div>
 	  <div className="py-2 flex  items-center">
 		  <MenuAlt1Icon className={`w-6 h-6 mr-2 text-${fromColor ? fromColor : "green-500"}`} /> 
-		  <div><span className="font-medium text-black">15,000</span>{` x `}Words</div>
+		  <div><span className="font-medium text-black">6,000</span>{` x `}Words</div>
 	  </div>
 	  <div className="py-2 flex  items-center">
 		  <PencilIcon className={`w-6 h-6 mr-2 text-${fromColor ? fromColor : "green-500"}`} /> 
-		  <div><span className="font-medium text-black">60,000</span>{` x `}Letters</div>
+		  <div><span className="font-medium text-black">40,000</span>{` x `}Letters</div>
 	  </div>
 	  <div className="py-2 flex  items-center">
 		  <UserIcon className={`w-6 h-6 mr-2 text-${fromColor ? fromColor : "green-500"}`} /> 
@@ -188,34 +188,34 @@ const Premium = ({ fromColor, toColor, baseURL, api }) => <div className="flex r
 
 <div className="p-8 flex-1">
   <div href="#" className={`text-${fromColor ? fromColor : "green-500"} block text-lg text-2xl leading-tight font-medium mb-2`}>Pro</div>
-  <div className="text-6xl text-black font-bold">$90<span className="text-lg text-gray-400">/per month</span></div>
+  <div className="text-6xl text-black font-bold">$20<span className="text-lg text-gray-400">/per month</span></div>
   <p className="mt-4 text-lg">
-	  Start today to get access to our powerful AI-powered features.
+	  Unlimited access to our entire suite of tools and features.
   </p>
   <div className="divide-y divide-dashed divide-gray-300 mt-4">
   <div className="py-2 flex  items-center">
 		  <DatabaseIcon className={`w-6 h-6 mr-2 text-${fromColor ? fromColor : "green-500"}`} /> 
-		  <div><span className="font-medium text-black">1,000</span>{` x `}Credits</div>
+		  <div><span className="font-medium text-black">Unlimited</span>{` x `}Credits</div>
 	  </div>
 	  <div className="py-2 flex  items-center">
 		  <MenuAlt1Icon className={`w-6 h-6 mr-2 text-${fromColor ? fromColor : "green-500"}`} /> 
-		  <div><span className="font-medium text-black">60,000</span>{` x `}Words</div>
+		  <div><span className="font-medium text-black">Unlimited</span>{` x `}Words</div>
 	  </div>
 	  <div className="py-2 flex  items-center">
 		  <PencilIcon className={`w-6 h-6 mr-2 text-${fromColor ? fromColor : "green-500"}`} /> 
-		  <div><span className="font-medium text-black">240,000</span>{` x `}Letters</div>
+		  <div><span className="font-medium text-black">Unlimited</span>{` x `}Letters</div>
 	  </div>
 	  <div className="py-2 flex  items-center">
 		  <UserIcon className={`w-6 h-6 mr-2 text-${fromColor ? fromColor : "green-500"}`} /> 
-		  <div><span className="font-medium text-black">10,800</span>{` x `}minutes saved</div>
+		  <div><span className="font-medium text-black">Infinite</span>{` x `}minutes saved</div>
 	  </div>
 	  <div className="py-2 flex  items-center">
 		  <CheckCircleIcon className={`w-6 h-6 mr-2 text-${fromColor ? fromColor : "green-500"}`} /> 
-		  <div><span className="font-medium text-black">180</span>{` x `}hours of time saved</div>
+		  <div><span className="font-medium text-black">Infinite</span>{` x `}hours of time saved</div>
 	  </div>
 	  <div className="py-2 flex  items-center">
 		  <CurrencyDollarIcon className={`w-6 h-6 mr-2 text-${fromColor ? fromColor : "green-500"}`} /> 
-		  <div><span className="font-medium text-black">$4,000</span>{` x `} billable time saved</div> 
+		  <div><span className="font-medium text-black">Infinite</span>{` x `} billable time saved</div> 
 	  </div>
 	  <div className="py-2 flex  items-center">
 		  <SparklesIcon className={`w-6 h-6 mr-2 text-${fromColor ? fromColor : "green-500"}`} /> 
