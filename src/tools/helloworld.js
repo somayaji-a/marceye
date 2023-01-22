@@ -5,21 +5,21 @@ import {
 
 const obj = {
 
-	title: "Product Title",
+	title: "Hello World",
 	desc: "Generate a title optimized for your product",
 	category: "Content",
 	Icon: ViewListIcon,
 	// tags: [],
 	permissions: ['user'],
 	
-	fromColor: "gray-500",
-	toColor: "gray-500",
+	fromColor: "yellow-400",
+	toColor: "yellow-600",
 
 	to: "/ai/helloworld",
 	api: "/ai/helloworld",
 
 	output: {
-		title: "Product Title",
+		title: "Hello World",
 		desc: "The following title was generated",
 		Icon: false,
 		color: "blue",

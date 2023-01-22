@@ -5,35 +5,35 @@ import {
 
 const obj = {
 
-	title: "New Example Prompt",
-	desc: "Analyze your text or documents and convey the important concepts in bullet form.",
-	category: "Programming",
+	title: "Product Title",
+	desc: "Generate an Optimized Product Title.",
+	category: "Content",
 	Icon: ViewListIcon,
 	// tags: [],
 	permissions: ['user'],
 	
-	fromColor: "gray-500",
-	toColor: "gray-500",
+	fromColor: "yellow-400",
+	toColor: "yellow-600",
 
-	to: "/ai/example",
-	api: "/ai/example",
+	to: "/ai/producttitle",
+	api: "/ai/producttitle",
 
 	output: {
-		title: "Example",
-		desc: "The following key points detected",
+		title: "Product Title",
+		desc: "The following title was generated",
 		Icon: false,
 		color: "blue",
 	},
 
 	prompts: [{
-		title:"Entry Text",
-		desc: "A sentence or paragraph you wish to understand in bullet point form.",
+		title:"Product Description",
+		desc: "A sentence or paragraph that describes the key features of your product",
 		// n: 1,
 		prompts: [{ 
-				title: "Content", 
-				attr: "content",  
+				title: "Description", 
+				attr: "description",  
 				value: "", 
-				placeholder: "When doing an your taxes, it's important to...", 
+				placeholder: "A rustic wooden key holder that is mountain shaped and...", 
 				label: "",
 				type: "textarea",
 				maxLength: 600,

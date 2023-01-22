@@ -3,16 +3,20 @@ import summarize from './summarize';
 import codeInterpret from './interpret';
 import intro from './intro';
 import helloworld from './helloworld';
-import example from './example';
+import producttitle from './producttitle';
+import policydocument from './policydocument';
+import productdescription from './productdescription';
 
 const TOOLS = [
 
-	codeInterpret,
+	//codeInterpret,
 	intro,
 	jobad,
 	summarize,
-	helloworld,
-	example,
+	//helloworld,
+	producttitle,
+	policydocument,
+	productdescription,
 
 ]
 

@@ -26,17 +26,14 @@ const contentFilterCheck = async (req, res, next) => {
 		// Add label to end end of the content string
 		content += `\n--\nLabel:`
 
-		const gptResponse = await openai.complete({
-			engine: 'content-filter-alpha-c4',
+		const gptResponse = await openai.createCompletion({
+			model: 'content-filter-alpha',
 			prompt: content,
-			maxTokens: 1,
+			max_tokens: 1,
 			temperature: 0,
-			topP: 0,
+			top_p: 0,
 			user: req.user._id,
-			logprobs: 10,
-			frequencyPenalty: 0,
-			presencePenalty: 0,
-			stream: false,
+			logprobs: 10
 		});
 
 		if(gptResponse.data.choices[0].text == "2"){

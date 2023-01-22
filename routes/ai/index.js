@@ -19,7 +19,9 @@ app.use('/', require('./code/interpret'));
 app.use('/', require('./writing/intro'));
 app.use('/', require('./jobad'));
 app.use('/', require('./helloworld'));
-app.use('/', require('./example'));
+app.use('/', require('./producttitle'));
+app.use('/', require('./policydocument'));
+app.use('/', require('./productdescription'));
 
 app.use('/', contentFilterCheck); 
 app.use('/', creditPayment); 

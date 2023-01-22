@@ -4,24 +4,25 @@ const openai = require('../middlewares/openai');
 
 let app = express.Router()
 
-app.post('/example', async (req, res, next) => {
+app.post('/producttitle', async (req, res, next) => {
 	try {
-		let { content } = req.body
-  
-	let prompt = `This is a Chatbot that Answer questions from a user:\n`
+		let { description } = req.body
 
-	let inputRaw = `${content}` // here is where people enter stuff
+	let prompt = `You are a seller of e-commerce items on Etsy. Generate a product title that is optimized for the Etsy search algoirthm, but does not contain the word Etsy in it. The product is a  `
+
+	let inputRaw = `${description}` + `\n` // here is where people enter stuff
 	prompt += inputRaw
 
-	const gptResponse = await openai.complete({
-		engine: 'curie',
+		console.log(prompt)
+
+	const gptResponse = await openai.createCompletion({
+		model: 'text-davinci-003',
 		prompt,
-		maxTokens: 150,
-		temperature: 0.2,
-		topP: 1,
-		frequencyPenalty: 1,
-		presencePenalty: 0,
-		bestOf: 1,
+		max_tokens: 250,
+		temperature: 1,
+		top_p: 1,
+		frequency_penalty: 0,
+		presence_penalty: 0,
 		n: 1,
 		user: req.user._id,
 		stream: false,
@@ -51,7 +52,7 @@ app.post('/example', async (req, res, next) => {
 	req.locals.input = prompt
 	req.locals.inputRaw = inputRaw
 	req.locals.output = output
-
+	console.log(output)
 	next()
 
 	} catch (err){

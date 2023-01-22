@@ -32,18 +32,17 @@ app.post('/personal/explain', async (req, res, next) => {
 
   
 		const gptResponse = await openai.complete({
-			engine: 'davinci',
+			model: 'davinci',
 			prompt,
-			maxTokens: 128,
-			temperature: 0.5,
-			topP: 1,
-			frequencyPenalty: 0.2,
-			presencePenalty: 0,
-			bestOf: 1,
+			max_tokens: 250,
+			temperature: 1,
+			top_p: 1,
+			frequency_penalty: 0,
+			presence_penalty: 0,
 			n: 1,
 			user: req.user._id,
 			stream: false,
-			stop: ["###", "REPHRASED", "TEXT", "ELI5" ],
+			stop: ["###", "<|endoftext|>", ],
 		});
 		
 		let output = `${gptResponse.data.choices[0].text}`

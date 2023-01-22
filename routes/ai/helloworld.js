@@ -16,14 +16,13 @@ app.post('/helloworld', async (req, res, next) => {
 	prompt += inputRaw
 
 	const gptResponse = await openai.complete({
-		engine: 'curie',
+		model: 'curie',
 		prompt,
-		maxTokens: 150,
-		temperature: 0.2,
-		topP: 1,
-		frequencyPenalty: 1,
-		presencePenalty: 0,
-		bestOf: 1,
+		max_tokens: 250,
+		temperature: 1,
+		top_p: 1,
+		frequency_penalty: 0,
+		presence_penalty: 0,
 		n: 1,
 		user: req.user._id,
 		stream: false,
