@@ -17,7 +17,7 @@ const paid = async (eventType,data) => {
 		return // not a subscription event
 	}
 	const { object } = data
-	console.log('Invoice object :', object)
+	console.log('got invoice data')
  	console.log(eventType)
 
 	let credits = 0
@@ -26,10 +26,10 @@ const paid = async (eventType,data) => {
 	if(object.amount_paid >= 500 && object.amount_paid < 2000 ) {
 		credits += 100
 	}
-	if(bject.amount_paid >= 2000 ) {
+	if(object.amount_paid >= 2000 ) {
 		credits += 1000
 	}
-
+	console.log('added credits ', credits)
 	// if(object.amount_paid > 500){
 	// 	credits += (object.amount_paid / 12)
 	// }
