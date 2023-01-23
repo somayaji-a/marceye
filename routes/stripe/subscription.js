@@ -46,7 +46,7 @@ const updated = async (eventType,data) => {
 	if (!eventType.includes("subscription.updated")) {
 		return // not a subscription event
 	}
-	
+	///need to look at what stripe api returns, and update plan status and plan info in db accordingly
 	const { object } = data
 	console.log('Database info ', object)
 	console.log(`object.status`,object.plan.status)
