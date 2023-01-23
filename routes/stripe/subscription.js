@@ -20,7 +20,6 @@ const created = async (eventType,data) => {
 	if (!eventType.includes("subscription.created")) {
 		return // not a subscription event
 	}
-	console.log(data)
 	const { object } = data
 	console.log(`object.status`,object.plan.status)
 	console.log(`object.id`,object.id)
@@ -48,7 +47,6 @@ const updated = async (eventType,data) => {
 	}
 	///need to look at what stripe api returns, and update plan status and plan info in db accordingly
 	const { object } = data
-	console.log('Database info ', object)
 	console.log(`object.status`,object.plan.status)
 	console.log(`object.id`,object.id)
 	console.log(`object.customer`,object.customer)
@@ -74,8 +72,6 @@ const deleted = async (eventType,data) => {
 	if (!eventType.includes("subscription.deleted")) {
 		return // not a subscription event
 	}
-	console.log(eventType)
-	console.log(data)
 	const { object } = data
 	console.log(`object.status`,object.plan.status)
 	console.log(`object.id`,object.id)

@@ -18,7 +18,6 @@ const paid = async (eventType,data) => {
 	}
 	const { object } = data
 	console.log('got invoice data')
- 	console.log(eventType)
 
 	let credits = 0
 	// 100 credits for entry, 1000 credits for pro
