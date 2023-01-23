@@ -34,6 +34,7 @@ app.post("/webhook", bodyParser.raw({type: 'application/json'}),  async (req, re
 			// Extract the object from the event.
 			data = event.data;
 			eventType = event.type;
+			console.log('Event data', data)
 		} else {
 			// Webhook signing is recommended, but if the secret is not configured in `config.js`,
 			// retrieve the event data directly from the request body.
@@ -41,7 +42,7 @@ app.post("/webhook", bodyParser.raw({type: 'application/json'}),  async (req, re
 			eventType = req.body.type;
 			
 		}
-
+		
 		checkout(eventType,data)
 		subscription(eventType,data)
 		invoice(eventType,data)

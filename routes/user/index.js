@@ -116,16 +116,17 @@ app.post('/stripe/cancel', async  (req, res) => {
 			const returnUrl = `${domainURL}my-profile`
 
 			let user = await User.findOne({ _id: req.user._id })
-
+			console.log('User ', user)
 			const subscriptions = await stripe.subscriptions.list({
 				customer: user.customerId,
 				limit: 1,
 			  });
-			//   console.log(`subscriptions`,subscriptions.data[0].id)
+			   console.log(`subscriptions`,subscriptions.data[0].id)
 
 			let update = stripe.subscriptions.update(subscriptions.data[0].id, {
 				cancel_at_period_end: true,
 			});
+			console.log('subscription updated')
 			setTimeout(()=>res.redirect(303, returnUrl), 2500)
 	} catch (err){
 		console.log(err)
@@ -148,11 +149,12 @@ app.post('/stripe/uncancel', async  (req, res) => {
 				customer: user.customerId,
 				limit: 1,
 			  });
-			//   console.log(`subscriptions`,subscriptions.data[0].id)
+			  //console.log(`subscriptions`,subscriptions.data[0].id)
 
 			let update = stripe.subscriptions.update(subscriptions.data[0].id, {
 				cancel_at_period_end: false,
 			});
+			console.log(update)
 			setTimeout(()=>res.redirect(303, returnUrl), 2500)
 	} catch (err){
 		console.log(err)

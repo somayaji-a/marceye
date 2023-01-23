@@ -42,7 +42,7 @@ app.post('/personal/explain', async (req, res, next) => {
 			n: 1,
 			user: req.user._id,
 			stream: false,
-			stop: ["###", "<|endoftext|>", ],
+			stop: ["###", "REPHRASED", "TEXT", "ELI5" ],
 		});
 		
 		let output = `${gptResponse.data.choices[0].text}`

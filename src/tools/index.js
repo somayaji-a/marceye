@@ -10,12 +10,12 @@ import productdescription from './productdescription';
 const TOOLS = [
 
 	//codeInterpret,
-	intro,
-	jobad,
-	summarize,
+	//intro,
+	//jobad,
+	//summarize,
 	//helloworld,
 	producttitle,
-	policydocument,
+	//policydocument,
 	productdescription,
 
 ]

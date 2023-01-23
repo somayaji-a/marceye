@@ -92,7 +92,7 @@ class Login extends Component {
 	return (
 		<>
 			<Helmet>
-				<title>{`Login - OpenAI Template`}</title>
+				<title>{`Login - Marceye`}</title>
 			</Helmet>
 			<div className="container mx-auto lg:px-4 py-4 min-h-screen flex flex-col md:items-center md:justify-center">
 
@@ -147,8 +147,8 @@ class Login extends Component {
 				{this.errorMessage}
 				</div> : null}
 				</div>
-				<a href={`https://www.open.ai/`} className="block text-center bg-gray-100 text-gray-500 text-sm p-3 rounded-b-lg hover:bg-gray-200 cursor-pointer">
-					Back to landing page
+				<a href={`/`} className="block text-center bg-gray-100 text-gray-500 text-sm p-3 rounded-b-lg hover:bg-gray-200 cursor-pointer">
+					Back to home page
 				</a>
 			</div>
 		</div>
@@ -186,7 +186,7 @@ class Login extends Component {
 						signUp Google
 						</div>
 						 */}
-						<a href={`https://www.openaitemplate.ai/contact`} className="mt-4 text-gray-400 text-sm">Forgot your password?</a>
+						<a href={`/`} className="mt-4 text-gray-400 text-sm">Forgot your password?</a>
 					</div>
                     </div>
                   </form>
