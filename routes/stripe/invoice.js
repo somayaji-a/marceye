@@ -23,10 +23,10 @@ const paid = async (eventType,data) => {
 	let credits = 0
 	// 100 credits for entry, 1000 credits for pro
 	
-	if(object.amount_paid > 500 && object.amount_paid < 2000 ) {
+	if(object.amount_paid >= 500 && object.amount_paid < 2000 ) {
 		credits += 100
 	}
-	if(bject.amount_paid > 2000 ) {
+	if(bject.amount_paid >= 2000 ) {
 		credits += 1000
 	}
 
