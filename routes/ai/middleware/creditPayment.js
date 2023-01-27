@@ -4,7 +4,10 @@ const User = db.user;
 const creditPayment = async (req, res, next) => {
 
 	// Prepare credit check on req
-
+	// console.log('Req locals input: ', req.locals.input)
+	// console.log('Req locals output: ', req.locals.output)
+	// console.log('Req locals outputs string: ', req.locals.outputsString)
+	// console.log('Req body n :',req.body.n)
 	let inputLength = 0
 	let outputLength = 0
 
@@ -24,12 +27,14 @@ const creditPayment = async (req, res, next) => {
 		outputLength = outputLength * req.body.n
 	}
 
+
 	// Cost in credits
 	inputLength = Math.ceil(inputLength / 4)
 	outputLength = Math.ceil(outputLength / 4)
-
-	// Pricing for Davinci model
-	let cost = 0.1200
+	// console.log('Input Length: ', inputLength)
+	// console.log('Output Length: ', outputLength)
+	// Pricing for Davinci model - 2 cents per 1000 tokens
+	let cost = 0.0200
 
 	// Cost is per 1k tokens
 	cost = cost / 1000
@@ -38,8 +43,9 @@ const creditPayment = async (req, res, next) => {
 	let price = (inputLength + outputLength) * cost
 
 	let creditsBeforeRounding = 12 * price
+	// console.log('Credits before rounding: ', creditsBeforeRounding)
 	let credits = Math.ceil(creditsBeforeRounding)
-
+	// console.log('Credits: ', credits)
 	req.locals.inputLength = inputLength
 	req.locals.outputLength = outputLength
 	req.locals.price = price

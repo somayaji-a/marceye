@@ -1,5 +1,5 @@
-# OpenAI Template
-This project is a starter kit for using OpenAI and its API layer. It is baked in with Authentication, Session Management, Token Tracking, as well as Billing (currently disabled).
+# Project Marceye
+This project is code named Marceye.
 
 ## Introduction
 

@@ -87,8 +87,8 @@ class SidebarCompontent extends Component {
 											<NavLink to="/"><Logo /></NavLink>
 											</div>
 												<div>
-													<div className="text-4xl relative font-medium text-transparent bg-clip-text bg-gradient-to-r from-gray-700 to-gray-600 inline-block">MarcEye<span className="font-normal "> Seller Tools</span></div>
-													<div className="hidden md:block text-xl text-transparent bg-clip-text bg-gradient-to-r from-gray-700 to-gray-500 inline-block">Generate SEO optimized copy for your products using AI.</div>
+													<div className="text-4xl relative font-medium text-transparent bg-clip-text bg-gradient-to-r from-gray-700 to-gray-600 inline-block">DeGeneratr<span className="font-normal "> Seller Tools</span></div>
+													<div className="hidden md:block text-xl text-transparent bg-clip-text bg-gradient-to-r from-gray-700 to-gray-500 inline-block">Decouple yourself from content generation with AI pwoered tools.</div>
 													<div className="flex">
 														<div className={`items-center flex inline-flex ${this.props.store.profile.credits ? " bg-gray-100 text-gray-500" : " bg-red-100 text-red-500"} text-sm rounded-md px-3 py-1 font-medium my-2 mr-2`}>
 															<DatabaseIcon className="w-4 h-4 mr-2" />{this.props.store.profile.credits}&nbsp;<span className="hidden lg:block">credits remain</span>

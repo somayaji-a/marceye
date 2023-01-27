@@ -54,7 +54,7 @@ class Pricing extends Component {
 				Start now
 			</h2>
 			<p className="text-lg sm:text-xl md:text-2xl text-gray-400 mb-14 mt-2 text-center">
-				Pick a pricing option to begin using Marceye.
+				Pick a pricing option to begin using DeGeneratr.
 			</p></>} 
 
 			<Grid>
@@ -79,12 +79,12 @@ const Free = ({ fromColor, toColor, baseURL, api }) => <div className="flex rela
 <div href="#" className={`text-${fromColor ? fromColor : "green-500"} block text-lg text-2xl leading-tight font-medium mb-2`}>Free</div>
 <div className="text-6xl text-black font-bold">$0<span className="text-lg text-gray-400"> free trial</span></div>
 <p className="mt-4 text-lg">
-	Test before you buy, and upgrade or cancel anytime.
+	Test before you buy with a one time set of credits, and upgrade or cancel anytime.
 </p>
 <div className="divide-y divide-dashed divide-gray-300 mt-4">
 	<div className="py-2 flex  items-center">
 		<DatabaseIcon className={`w-6 h-6 mr-2 text-${fromColor ? fromColor : "green-500"}`} /> 
-		<div><span className="font-medium text-black">10</span>{` x `}Credits</div>
+		<div><span className="font-medium text-black">5</span>{` x `}Credits (no renewal)</div>
 	</div>
 	<div className="py-2 flex  items-center">
 		<MenuAlt1Icon className={`w-6 h-6 mr-2 text-${fromColor ? fromColor : "green-500"}`} /> 
@@ -119,7 +119,7 @@ const Free = ({ fromColor, toColor, baseURL, api }) => <div className="flex rela
 <form action={baseURL + "user/stripe/subscribe"} method="POST" className="flex flex-1">
 <input type="hidden" name="token" value={api.defaults.headers.common['x-access-token']} />
 		<input type="hidden" name="priceId" value={config.stripe.free} />
-		{/* <input type="hidden" name="trial" value="true" /> */}
+		<input type="hidden" name="trial" value="true" />
 <button type="submit" className={`mt-8 inset-0 bg-gradient-to-r from-${fromColor ? fromColor : "green-400"} to-${toColor ? toColor : "blue-500"} shadow-lg flex-1 rounded-md p-4 text-white font-medium text-center text-lg transition hover:from-gray-700 hover:to-gray-800 text-enter`}>Try Out</button>
 </form>
 </div>
@@ -195,27 +195,27 @@ const Premium = ({ fromColor, toColor, baseURL, api }) => <div className="flex r
   <div className="divide-y divide-dashed divide-gray-300 mt-4">
   <div className="py-2 flex  items-center">
 		  <DatabaseIcon className={`w-6 h-6 mr-2 text-${fromColor ? fromColor : "green-500"}`} /> 
-		  <div><span className="font-medium text-black">Unlimited</span>{` x `}Credits</div>
+		  <div><span className="font-medium text-black">1000</span>{` x `}Credits</div>
 	  </div>
 	  <div className="py-2 flex  items-center">
 		  <MenuAlt1Icon className={`w-6 h-6 mr-2 text-${fromColor ? fromColor : "green-500"}`} /> 
-		  <div><span className="font-medium text-black">Unlimited</span>{` x `}Words</div>
+		  <div><span className="font-medium text-black">60,000</span>{` x `}Words</div>
 	  </div>
 	  <div className="py-2 flex  items-center">
 		  <PencilIcon className={`w-6 h-6 mr-2 text-${fromColor ? fromColor : "green-500"}`} /> 
-		  <div><span className="font-medium text-black">Unlimited</span>{` x `}Letters</div>
+		  <div><span className="font-medium text-black">420,000</span>{` x `}Letters</div>
 	  </div>
 	  <div className="py-2 flex  items-center">
 		  <UserIcon className={`w-6 h-6 mr-2 text-${fromColor ? fromColor : "green-500"}`} /> 
-		  <div><span className="font-medium text-black">Infinite</span>{` x `}minutes saved</div>
+		  <div><span className="font-medium text-black">Thousands</span>{` of `}minutes saved</div>
 	  </div>
 	  <div className="py-2 flex  items-center">
 		  <CheckCircleIcon className={`w-6 h-6 mr-2 text-${fromColor ? fromColor : "green-500"}`} /> 
-		  <div><span className="font-medium text-black">Infinite</span>{` x `}hours of time saved</div>
+		  <div><span className="font-medium text-black">Hundreds</span>{` of `}hours of time saved</div>
 	  </div>
 	  <div className="py-2 flex  items-center">
 		  <CurrencyDollarIcon className={`w-6 h-6 mr-2 text-${fromColor ? fromColor : "green-500"}`} /> 
-		  <div><span className="font-medium text-black">Infinite</span>{` x `} billable time saved</div> 
+		  <div><span className="font-medium text-black">Thousands</span>{` of `} billable time saved</div> 
 	  </div>
 	  <div className="py-2 flex  items-center">
 		  <SparklesIcon className={`w-6 h-6 mr-2 text-${fromColor ? fromColor : "green-500"}`} /> 

@@ -34,7 +34,7 @@ const Logo = (props) => (
 // 	</linearGradient>
 // 	</defs>
 //   </svg>
-<svg xmlns="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/1999/xlink" width="150" zoomAndPan="magnify" viewBox="0 0 375 374.999991" height="500" preserveAspectRatio="xMidYMid meet" version="1.0">
+<svg className={props.className || "w-24 h-24"}  xmlns="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/1999/xlink" width="150" zoomAndPan="magnify" viewBox="0 0 375 374.999991" height="500" preserveAspectRatio="xMidYMid meet" version="1.0">
 	<defs><clipPath id="27523026c7">
 <path d="M 85.242188 85.242188 L 289.992188 85.242188 L 289.992188 289.992188 L 85.242188 289.992188 Z M 85.242188 85.242188 " clip-rule="nonzero"/>
 </clipPath>

@@ -6,10 +6,11 @@ const saveToHistory = require('./saveToHistory');
 
 const initMiddleware = async (req, res, next) => {
 	req.locals = {}
-
+	console.log('middleware check body: ',req.body)  //checking what is passed here.
 	// Ensure N (number of generations) is no less than 1 or more than 10 
 	// Number of credits to be used
 	let { n } = req.body
+	console.log('n: ', n)
 	if(!n){
 		n = 1
 	} else {

@@ -9,12 +9,13 @@ let app = express.Router()// User Subscribe
 
 app.post('/stripe/subscribe', async  (req, res) => {
 	const domainURL = process.env.DOMAIN;
+	console.log('Subscribe request body: ',req.body)
 	const { priceId, trial } = req.body
 	
 	try {
 			let user = await User.findOne({ _id: req.user._id })
 			let customer = user.customerId ? { customer: user.customerId } : {customer_email: user.email}
-			const subscription_data = trial ? { trial_period_days: 7 } : {}
+			const subscription_data = trial ? { trial_period_days: 30 } : {}
 			const session = await stripe.checkout.sessions.create({
 			mode: 'subscription',
 			payment_method_types: ['card'],

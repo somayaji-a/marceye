@@ -4,7 +4,7 @@ const User = db.user;
 const creditCheck = async (req, res, next) => {
 
 	let user = await User.findOne({ _id: req.user._id })
-
+	console.log('User credits: ', user.credits) //checking user credits
 	if(user.credits > 0){
 		next()
 	} else {

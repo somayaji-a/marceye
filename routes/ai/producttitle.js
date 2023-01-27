@@ -13,8 +13,6 @@ app.post('/producttitle', async (req, res, next) => {
 	let inputRaw = `${description}` + `\n` // here is where people enter stuff
 	prompt += inputRaw
 
-		console.log(prompt)
-
 	const gptResponse = await openai.createCompletion({
 		model: 'text-davinci-003',
 		prompt,

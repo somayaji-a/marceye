@@ -46,9 +46,9 @@ class Body extends Component {
 
 		<>
 			<Helmet>
-				<title>{`MarcEye - Seller Tools`}</title>
+				<title>{`DeGeneratr - Seller Tools`}</title>
 			</Helmet>
-			<MainBody className="px-4 py-4 md:px-28 md:py-8 lg:py-12 ">
+			<MainBody className="px-4 py-4 md:px-28 md:py-8 lg:py-10 ">
 
 		
 
