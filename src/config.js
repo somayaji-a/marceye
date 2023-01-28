@@ -10,11 +10,11 @@ const dev = {
   
 const prod = {
 	baseURL: '/api/',
-	landingPageUrl: "https://app.openaitemplate.com",
+	landingPageUrl: "https://app.degeneratr.com",
 	stripe: {
-		free: "price_1MQDDNEh4b291ZdRdtbpU0gJ",
-		entry: "price_1MQDCIEh4b291ZdRY0zcmH60",
-		pro: "price_1MQB01Eh4b291ZdRwUfMJ4lY"
+		free: "price_1MVJKAEh4b291ZdRfFIYqBGl",
+		entry: "price_1MVJKFEh4b291ZdRpNcZkqH9",
+		pro: "price_1MVJKJEh4b291ZdRIObdAkHD"
 	},
 };
   
