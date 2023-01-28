@@ -62,17 +62,18 @@ class SidebarCompontent extends Component {
 	}
 
 	@computed get fromColor(){
+		console.log(this.props.store.profile.status)
 		if(this.props.store.profile.credits <= 0){
 			return "bg-red-200 text-red-600"
 		}
 		if(this.props.store.profile.status === "trialing"){
-			return "In trial period"
+			return "bg-yellow-200 text-yellow-600"
 		}
 		if(this.props.store.profile.status === "active"){
-			return "Active subscriptions"
+			return "bg-green-200 text-green-600"
 		}
 		if(this.props.store.profile.status === "incomplete"){
-			return "Something Else"
+			return "bg-red-200 text-red-600"
 		}
 		return "bg-red-200 text-red-600"
 	}

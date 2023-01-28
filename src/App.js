@@ -27,7 +27,6 @@ import Login from './Login/Login'
 import Profile from './Profile/'
 import LoginSuccess from './Login/Success'
 
-
 import './App.scss'
 
 if(!window.store){
@@ -76,7 +75,7 @@ class App extends Component {
                   <Route>
                     <Pricing />
                   </Route>
-                  </Switch>
+                </Switch>
                 </>} </> : <> {/*  Not Logged In */}
                 <Switch>
                   <Route path="/" exact>

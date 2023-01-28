@@ -58,7 +58,8 @@ class Pricing extends Component {
 			</p></>} 
 
 			<Grid>
-				{this.props.store.profile.status ? null : <Free  fromColor="gray-400" toColor="gray-500" baseURL={this.props.store.baseURL} api={this.props.store.api}/>} 
+				{/* {this.props.store.profile.status ? null : <Free  fromColor="gray-400" toColor="gray-500" baseURL={this.props.store.baseURL} api={this.props.store.api}/>}  */}
+				<Free  fromColor="gray-400" toColor="gray-500" baseURL={this.props.store.baseURL} api={this.props.store.api}/>
 				<Entry fromColor="green-400" toColor="green-600" baseURL={this.props.store.baseURL} api={this.props.store.api} />
 				<Premium fromColor="indigo-500" toColor="red-500" baseURL={this.props.store.baseURL} api={this.props.store.api} />
 			</Grid>
@@ -119,7 +120,7 @@ const Free = ({ fromColor, toColor, baseURL, api }) => <div className="flex rela
 <form action={baseURL + "user/stripe/subscribe"} method="POST" className="flex flex-1">
 <input type="hidden" name="token" value={api.defaults.headers.common['x-access-token']} />
 		<input type="hidden" name="priceId" value={config.stripe.free} />
-		<input type="hidden" name="trial" value="true" />
+		{/* <input type="hidden" name="trial" value="true" /> */}
 <button type="submit" className={`mt-8 inset-0 bg-gradient-to-r from-${fromColor ? fromColor : "green-400"} to-${toColor ? toColor : "blue-500"} shadow-lg flex-1 rounded-md p-4 text-white font-medium text-center text-lg transition hover:from-gray-700 hover:to-gray-800 text-enter`}>Try Out</button>
 </form>
 </div>
@@ -135,7 +136,7 @@ const Entry = ({ fromColor, toColor, baseURL, api }) => <div className="flex rel
   <div href="#" className={`text-${fromColor ? fromColor : "green-500"} block text-lg text-2xl leading-tight font-medium mb-2`}>Entry</div>
   <div className="text-6xl text-black font-bold">$5<span className="text-lg text-gray-400">/per month</span></div>
   <p className="mt-4 text-lg">
-	  Start today to get access to our powerful AI-powered e-commerce and Etsy features.
+	  Start today to get full access to our powerful AI-powered e-commerce features.
   </p>
   <div className="divide-y divide-dashed divide-gray-300 mt-4">
 	  <div className="py-2 flex  items-center">
