@@ -68,7 +68,7 @@ class Referral extends Component {
 		try {
 			await this.props.store.api.post('/user/feedback', {  feedback: this.props.store.feedback, })
 			this.refreshFeedback()
-			this.output = "Thank you for your feedback!"
+			this.output = "Thank you for taking the time to provide feedback on our app. We value your input and will use it to continue to improve the user experience. Your comments and suggestions will help us make our app more user-friendly and efficient. We appreciate your support and look forward to your continued use of our app. If you have any further feedback or questions, please do not hesitate to reach out to us. Thank you!"
 			this.props.store.feedback = ``
 		} catch (err) {
 			console.log(err)
@@ -113,7 +113,7 @@ class Referral extends Component {
 						</Col>
 						<Col span="6">
 							<Output 
-                                    title={`EnhanceAI.ai`}
+                                    title={`Degeneratr.com`}
                                     desc={`Feedback Response`}
 
                                     Icon={Logo}
