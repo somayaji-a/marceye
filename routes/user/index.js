@@ -168,7 +168,7 @@ app.post('/stripe/uncancel', async  (req, res) => {
 app.post('/stripe/plan', async  (req, res) => {
 	try {
 		let user = await User.findOne({ _id: req.user._id })
-
+		console.log("User Details:", user)
 		let obj = {
 			plan: "None",
 			status: "trailing",
@@ -182,9 +182,10 @@ app.post('/stripe/plan', async  (req, res) => {
 				customer: user.customerId,
 				limit: 1,
 			});
+		console.log("user customer id:", user.customerId)	
 	
 			if(subscriptions.data[0]) {
-	
+				console.log("subscrition data:", subscriptions.data[0])
 				obj.plan = subscriptions.data[0].plan.nickname
 				obj.status = subscriptions.data[0].status
 				obj.start_date = subscriptions.data[0].start_date
