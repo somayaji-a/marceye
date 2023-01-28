@@ -8,19 +8,19 @@ app.post('/producttitle', async (req, res, next) => {
 	try {
 		let { description } = req.body
 
-	let prompt = `You are a seller of e-commerce items on Etsy. Generate a product title that is optimized for the Etsy search algoirthm, but does not contain the word Etsy in it. The product is a  `
+	let prompt = `Please generate a title for a ${description} that is attention-grabbing, accurately describes the product's features and benefits, and includes relevant keywords with high search volume and low competition on search engines. The title should be no more than 60 characters long and should be optimized for both search engines and human readers.  `
 
-	let inputRaw = `${description}` + `\n` // here is where people enter stuff
+	let inputRaw = `\n###` // here is where people enter stuff
 	prompt += inputRaw
 
 	const gptResponse = await openai.createCompletion({
 		model: 'text-davinci-003',
 		prompt,
-		max_tokens: 250,
-		temperature: 1,
+		max_tokens: 100,
+		temperature: 0.5,
 		top_p: 1,
-		frequency_penalty: 0,
-		presence_penalty: 0,
+		frequency_penalty: 1,
+		presence_penalty: 1,
 		n: 1,
 		user: req.user._id,
 		stream: false,

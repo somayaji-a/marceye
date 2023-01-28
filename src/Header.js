@@ -177,7 +177,7 @@ const SuperHeader = styled.div`
 	background:white;
 	margin-top:${props => props.active ? "0px" : "-150px" };
 	display:${props => props.hidden ? "hidden" : "flex" };
-	background-image:url(${require('./pattern-dots.svg').default});
+
 	background-size:auto 50%;
 	background-position: 20px 20px;
 	background-repeat:no-repeat;

@@ -6,6 +6,7 @@ import helloworld from './helloworld';
 import producttitle from './producttitle';
 import policydocument from './policydocument';
 import productdescription from './productdescription';
+import productkeywords from './productkeywords';
 
 const TOOLS = [
 
@@ -17,6 +18,7 @@ const TOOLS = [
 	producttitle,
 	//policydocument,
 	productdescription,
+	productkeywords,
 
 ]
 

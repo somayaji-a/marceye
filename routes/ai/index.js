@@ -22,6 +22,7 @@ app.use('/', require('./helloworld'));
 app.use('/', require('./producttitle'));
 app.use('/', require('./policydocument'));
 app.use('/', require('./productdescription'));
+app.use('/', require('./productkeywords'));
 
 app.use('/', contentFilterCheck); 
 app.use('/', creditPayment); 

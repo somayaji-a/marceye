@@ -71,7 +71,7 @@ class Body extends Component {
 			</> : null}
 
 			{this.content.length ? <>
-				<Title title="Written Content" />
+				<Title title="Listing Details" />
 				<Grid>
 					{this.content.map((tool, index) => 
 						<Tool 

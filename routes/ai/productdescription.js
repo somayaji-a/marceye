@@ -10,16 +10,17 @@ let app = express.Router()
 // output characters: 200
 
 app.post('/productdescription', async (req, res, next) => {
-	let { content, currentPrompt, title, organization, details} = req.body
+	let { currentPrompt, title, organization, details} = req.body
   
 	let prompt = ""
 	let inputRaw = ""
 
 	if(currentPrompt === "Product Description Details"){
-		prompt = `Create a detailed Etsy listing description with the following details:\n###`
+		prompt = `Write a unique and compelling product description for a ${title} that includes relevant keywords that have high search volume and low competition on search engines. The keywords used in the product description should accurately describe the product's features and benefits while also being specific and relevant to the target audience. The description should be at least 300 words and should highlight the product's unique features and benefits while also incorporating persuasive language to encourage purchase. Shoppers will only see the first few lines of your description at first, so please ensure the first few lines are compelling and informative. At the end, the description should thank the shopper for choosing my store: ${organization}. The desciption should also consider the following specific details about my product: ${details}
+		`
 	 
 
-	  inputRaw = `TITLE: ${title}\nORGANIZATION: ${organization}\nDETAILS: ${details}\nPRODUCT DESCRIPTION:\n`
+	  inputRaw = `\n###`
 	  prompt += inputRaw
 	}
   
@@ -28,11 +29,11 @@ app.post('/productdescription', async (req, res, next) => {
 	const gptResponse = await openai.createCompletion({
 		model: 'text-davinci-003',
 		prompt,
-		max_tokens: 250,
-		temperature: 0.5,
+		max_tokens: 500,
+		temperature: 0,
 		top_p: 1,
-		frequency_penalty: 0,
-		presence_penalty: 0,
+		frequency_penalty: 1,
+		presence_penalty: 1,
 		n: 1,
 		best_of: 1,
 		user: req.user._id,
