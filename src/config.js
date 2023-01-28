@@ -10,7 +10,7 @@ const dev = {
   
 const prod = {
 	baseURL: '/api/',
-	landingPageUrl: "https://app.degeneratr.com",
+	landingPageUrl: "https://degeneratr.com",
 	stripe: {
 		free: "price_1MVJKAEh4b291ZdRfFIYqBGl",
 		entry: "price_1MVJKFEh4b291ZdRpNcZkqH9",
