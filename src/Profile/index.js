@@ -137,8 +137,8 @@ class Body extends Component {
 						{this.plan.status === "trialing" ? 
 									<ToolForm
 									Icon={CheckIcon}
-									title={`Active Subscription`} 
-									desc={`${this.plan.plan === "Entry" ? "$30" : ""}${this.plan.plan === "Pro" ? "$90" : ""} billing  immediately. Ends trial and starts billing plan.`} 
+									title={`Activate Subscription`} 
+									desc={`${this.plan.plan === "Entry" ? "$5" : ""}${this.plan.plan === "Pro" ? "$20" : ""} billing  immediately. Ends trial and starts billing plan.`} 
 									to={this.props.store.baseURL + "/user/stripe/activate"}
 									api={this.props.store.api}
 									fromColor="purple-500"
@@ -147,7 +147,8 @@ class Body extends Component {
 
 
 
-							{this.plan.plan === "None" ? <Tool
+							{this.plan.plan === "None" ? 
+								<Tool
 								Icon={IdentificationIcon}
 								title={"Pricing Plans"} 
 								api={this.props.store.api}
@@ -164,7 +165,7 @@ class Body extends Component {
 									Icon={IdentificationIcon}
 									title={"Cancel Subscription"} 
 									api={this.props.store.api}
-									desc={"Immediately cancelation of subscription and payments."} 
+									desc={"Immediate cancelation of subscription and payments."} 
 									to={this.props.store.baseURL + "user/stripe/cancel"}
 									fromColor={this.props.store.profile.cancel_at_period_end ? "red-600" : "red-500"} 
 									toColor={this.props.store.profile.cancel_at_period_end ? "red-400" : "red-600"} 
@@ -187,7 +188,7 @@ class Body extends Component {
 									Icon={CheckIcon}
 									title={"Reactivate Subscription"} 
 									api={this.props.store.api}
-									desc={"Immediately cancelation of subscription and payments."} 
+									desc={"Reactive a subscription and start generating content again."} 
 									to={this.props.store.baseURL + "user/stripe/uncancel"}
 									fromColor={this.props.store.profile.cancel_at_period_end ? "green-400" : "green-500"} 
 									toColor={this.props.store.profile.cancel_at_period_end ? "green-400" : "green-500"} 
