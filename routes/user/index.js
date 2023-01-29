@@ -52,7 +52,7 @@ app.post('/stripe/customer-portal', async  (req, res) => {
 			const returnUrl = `${domainURL}my-profile`
 
 			let user = await User.findOne({ _id: req.user._id })
-			console.log('customer id: ', user.customerId)
+			// console.log('customer id: ', user.customerId)
 			const portalSession = await stripe.billingPortal.sessions.create({
 				customer: user.customerId,
 				return_url: returnUrl,
@@ -61,7 +61,7 @@ app.post('/stripe/customer-portal', async  (req, res) => {
 			// Redirect to the URL for the session
 			res.redirect(303, portalSession.url);	
 	} catch (err){
-		console.log('Error: ', err)
+		// console.log('Error: ', err)
 		await User
 		.updateOne({ _id: req.user._id },
 			{ 
@@ -71,7 +71,7 @@ app.post('/stripe/customer-portal', async  (req, res) => {
 				trial_end: 0,
 				current_period_end: 0,
 		})
-		console.log('Error: ', err)
+		// console.log('Error: ', err)
 		const domainURL = process.env.DOMAIN;
 		const returnUrl = `${domainURL}my-profile`
 		res.redirect(303, returnUrl);	
