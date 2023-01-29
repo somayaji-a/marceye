@@ -52,7 +52,7 @@ app.post('/stripe/customer-portal', async  (req, res) => {
 			const returnUrl = `${domainURL}my-profile`
 
 			let user = await User.findOne({ _id: req.user._id })
-
+			console.log('customer id: ', user.customerId)
 			const portalSession = await stripe.billingPortal.sessions.create({
 				customer: user.customerId,
 				return_url: returnUrl,
@@ -61,7 +61,7 @@ app.post('/stripe/customer-portal', async  (req, res) => {
 			// Redirect to the URL for the session
 			res.redirect(303, portalSession.url);	
 	} catch (err){
-		// console.log(err)
+		console.log('Error: ', err)
 		await User
 		.updateOne({ _id: req.user._id },
 			{ 
@@ -71,7 +71,7 @@ app.post('/stripe/customer-portal', async  (req, res) => {
 				trial_end: 0,
 				current_period_end: 0,
 		})
-		// console.log(err)
+		console.log('Error: ', err)
 		const domainURL = process.env.DOMAIN;
 		const returnUrl = `${domainURL}my-profile`
 		res.redirect(303, returnUrl);	
@@ -168,7 +168,7 @@ app.post('/stripe/uncancel', async  (req, res) => {
 app.post('/stripe/plan', async  (req, res) => {
 	try {
 		let user = await User.findOne({ _id: req.user._id })
-		console.log("User Details:", user)
+
 		let obj = {
 			plan: "None",
 			status: "trailing",
@@ -182,16 +182,13 @@ app.post('/stripe/plan', async  (req, res) => {
 				customer: user.customerId,
 				limit: 1,
 			});
-		console.log("user customer id:", user.customerId)	
 	
 			if(subscriptions.data[0]) {
-				console.log("subscrition data:", subscriptions.data[0])
 				obj.plan = subscriptions.data[0].plan.nickname
 				obj.status = subscriptions.data[0].status
 				obj.start_date = subscriptions.data[0].start_date
 				obj.cancel_at_period_end = subscriptions.data[0].cancel_at_period_end
 				obj.current_period_end = subscriptions.data[0].current_period_end
-				
 			}
 	
 			
