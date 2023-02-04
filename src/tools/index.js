@@ -7,6 +7,7 @@ import producttitle from './producttitle';
 import policydocument from './policydocument';
 import productdescription from './productdescription';
 import productkeywords from './productkeywords';
+import etsyListingDetails from './etsyListingDetails';
 
 const TOOLS = [
 
@@ -19,6 +20,7 @@ const TOOLS = [
 	//policydocument,
 	productdescription,
 	productkeywords,
+	etsyListingDetails,
 
 ]
 

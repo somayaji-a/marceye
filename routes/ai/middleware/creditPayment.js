@@ -27,6 +27,10 @@ const creditPayment = async (req, res, next) => {
 		outputLength = outputLength * req.body.n
 	}
 
+	if (req.locals.input === 'nonCredit'){
+		inputLenght = 0
+		outputLength = 0
+	}
 
 	// Cost in credits
 	inputLength = Math.ceil(inputLength / 4)
@@ -41,8 +45,10 @@ const creditPayment = async (req, res, next) => {
 
 	// Credits used in a transaction
 	let price = (inputLength + outputLength) * cost
+	// console.log('Input: ', inputLength, 'Output: ', outputLength)
 
 	let creditsBeforeRounding = 12 * price
+	// console.log('Price: ', price)
 	// console.log('Credits before rounding: ', creditsBeforeRounding)
 	let credits = Math.ceil(creditsBeforeRounding)
 	// console.log('Credits: ', credits)
@@ -54,7 +60,6 @@ const creditPayment = async (req, res, next) => {
 	// Now updated the suer
 
 	let user = await User.findOne({ _id: req.user._id })
-
 	user.credits = user.credits - credits
 	user.creditsUsed = user.creditsUsed + credits
 
