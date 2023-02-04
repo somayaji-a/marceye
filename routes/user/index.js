@@ -28,6 +28,7 @@ app.post('/stripe/subscribe', async  (req, res) => {
 				},
 			],
 			subscription_data,
+			payment_method_collection: 'if_required',
 			success_url: `${domainURL}signup/success?session_id={CHECKOUT_SESSION_ID}`,
 			cancel_url: `${domainURL}signup/failed`,
 		});
