@@ -33,13 +33,19 @@ class Body extends Component {
 		return this.permissions.filter(tool => tool.category === 'Social')
 	}
 
+	//listing details
 	@computed get content() {
 		return this.permissions.filter(tool => tool.category === 'Content')
 	}
 
-	@computed get programming() {
-		return this.permissions.filter(tool => tool.category === 'Programming')
+	//Etsy listing research
+	@computed get etsyResearch() {
+		return this.permissions.filter(tool => tool.category === 'Etsy Research')
 	}
+
+	// @computed get programming() {
+	// 	return this.permissions.filter(tool => tool.category === 'Programming')
+	// }
 
 	render() {
 	return (
@@ -52,7 +58,7 @@ class Body extends Component {
 
 		
 
-			{this.programming.length ? <>
+			{/* {this.programming.length ? <>
 				<Title title="Programming" />
 				<Grid>
 					{this.programming.map((tool, index) => 
@@ -68,12 +74,30 @@ class Body extends Component {
 						/>)} 
 				</Grid>
 				<Divider />
-			</> : null}
+			</> : null} */}
 
 			{this.content.length ? <>
 				<Title title="Listing Details" />
 				<Grid>
 					{this.content.map((tool, index) => 
+						<Tool 
+							key={index}
+							group={tool.category}
+							title={tool.title} 
+							to={tool.to} 
+							Icon={tool.Icon} 
+							desc={tool.desc} 
+							fromColor={tool.fromColor} 
+							toColor={tool.toColor} 
+						/>)} 
+				</Grid>
+				<Divider />
+				</> : null}
+
+			{this.etsyResearch.length ? <>
+				<Title title="Etsy Research" />
+				<Grid>
+					{this.etsyResearch.map((tool, index) => 
 						<Tool 
 							key={index}
 							group={tool.category}

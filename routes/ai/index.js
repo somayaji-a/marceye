@@ -23,10 +23,14 @@ app.use('/', require('./producttitle'));
 app.use('/', require('./policydocument'));
 app.use('/', require('./productdescription'));
 app.use('/', require('./productkeywords'));
+// app.use('/', require('./etsyListingDetails'));
 
 app.use('/', contentFilterCheck); 
 app.use('/', creditPayment); 
 app.use('/', saveToHistory); 
+
+//add modules here that bypass the credit check and query save
+app.use('/', require('./etsyListingDetails'));
 
 app.use('/', sendResponse); 
 
