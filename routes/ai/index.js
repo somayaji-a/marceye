@@ -23,7 +23,8 @@ app.use('/', require('./producttitle'));
 app.use('/', require('./policydocument'));
 app.use('/', require('./productdescription'));
 app.use('/', require('./productkeywords'));
-// app.use('/', require('./etsyListingDetails'));
+app.use('/', require('./imageAttribution'));
+app.use('/', require('./imageGenerator'));
 
 app.use('/', contentFilterCheck); 
 app.use('/', creditPayment); 

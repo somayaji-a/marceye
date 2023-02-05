@@ -8,6 +8,8 @@ import policydocument from './policydocument';
 import productdescription from './productdescription';
 import productkeywords from './productkeywords';
 import etsyListingDetails from './etsyListingDetails';
+import imageAttribution from './imageAttribution';
+import imageGenerator from './imageGenerator';
 
 const TOOLS = [
 
@@ -21,6 +23,8 @@ const TOOLS = [
 	productdescription,
 	productkeywords,
 	etsyListingDetails,
+	imageAttribution,
+	imageGenerator,
 
 ]
 
