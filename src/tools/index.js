@@ -1,33 +1,43 @@
+//original
 import jobad from './jobad';
 import summarize from './summarize';
 import codeInterpret from './interpret';
 import intro from './intro';
 import helloworld from './helloworld';
-import producttitle from './producttitle';
 import policydocument from './policydocument';
-import productdescription from './productdescription';
-import productkeywords from './productkeywords';
-import etsyListingDetails from './etsyListingDetails';
-import imageAttribution from './imageAttribution';
-import imageGenerator from './imageGenerator';
-import productFAQ from './productFAQ';
+
+//ListingDetails
+import producttitle from './ListingDetails/producttitle';
+import productdescription from './ListingDetails/productdescription';
+import productkeywords from './ListingDetails/productkeywords';
+import imageAttribution from './ListingDetails/imageAttribution';
+import imageGenerator from './ListingDetails/imageGenerator';
+import productFAQ from './ListingDetails/productFAQ';
+
+//EtsyResearch
+import etsyListingDetails from './EtsyResearch/etsyListingDetails';
 
 const TOOLS = [
 
+	// removed
 	//codeInterpret,
 	//intro,
 	//jobad,
 	//summarize,
 	//helloworld,
-	producttitle,
 	//policydocument,
+	
+	//content
+	producttitle,
 	productdescription,
 	productkeywords,
-	etsyListingDetails,
+	
 	imageAttribution,
 	imageGenerator,
 	productFAQ,
 
+	//EtsyResearch
+	etsyListingDetails,
 ]
 
 export default TOOLS

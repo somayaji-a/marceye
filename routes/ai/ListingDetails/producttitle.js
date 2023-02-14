@@ -1,10 +1,10 @@
 
 const express = require('express');
-const openai = require('../middlewares/openai');
+const openai = require('../../middlewares/openai');
 
 let app = express.Router()
 
-app.post('/producttitle', async (req, res, next) => {
+app.post('/ListingDetails/producttitle', async (req, res, next) => {
 	try {
 		let { description } = req.body
 

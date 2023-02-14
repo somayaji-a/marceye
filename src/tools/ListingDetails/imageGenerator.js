@@ -7,13 +7,13 @@ const obj = {
 
 	title: "Product Image Generator (Beta)",
 	desc: "Create a high resolution product image for your listing based on text descriptions.",
-	category: "Content",
+	category: "Listing Details",
 	Icon: ClipboardListIcon,
 	// tags: [],
 	permissions: ['user'],
 
-	to: "/ai/imageGenerator",
-	api: "/ai/imageGenerator",
+	to: "/ai/ListingDetails/mageGenerator",
+	api: "/ai/ListingDetails/imageGenerator",
 	
 	fromColor: "yellow-400",
 	toColor: "yellow-600",

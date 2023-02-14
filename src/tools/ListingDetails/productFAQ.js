@@ -7,7 +7,7 @@ const obj = {
 
 	title: "Product FAQs",
 	desc: "Generate a list of FAQ's for questions your customers may ask.",
-	category: "Content",
+	category: "Listing Details",
 	Icon: ViewListIcon,
 	// tags: [],
 	permissions: ['user'],
@@ -15,8 +15,8 @@ const obj = {
 	fromColor: "yellow-400",
 	toColor: "yellow-600",
 
-	to: "/ai/productFAQ",
-	api: "/ai/productFAQ",
+	to: "/ai/ListingDetails/productFAQ",
+	api: "/ai/ListingDetails/productFAQ",
 
 	output: {
 		title: "Product FAQs",

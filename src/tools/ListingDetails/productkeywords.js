@@ -7,13 +7,13 @@ const obj = {
 
 	title: "Product Keywords",
 	desc: "Generate a list of high impact keywords for your product",
-	category: "Content",
+	category: "Listing Details",
 	Icon: ClipboardListIcon,
 	// tags: [],
 	permissions: ['user'],
 
-	to: "/ai/productkeywords",
-	api: "/ai/productkeywords",
+	to: "/ai/ListingDetails/productkeywords",
+	api: "/ai/ListingDetails/productkeywords",
 	
 	fromColor: "yellow-400",
 	toColor: "yellow-600",

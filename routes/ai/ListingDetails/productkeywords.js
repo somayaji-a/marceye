@@ -1,6 +1,6 @@
 
 const express = require('express');
-const openai = require('../middlewares/openai');
+const openai = require('../../middlewares/openai');
 
 let app = express.Router()
 
@@ -9,7 +9,7 @@ let app = express.Router()
 // output tokens: 50
 // output characters: 200
 
-app.post('/productkeywords', async (req, res, next) => {
+app.post('/ListingDetails/productkeywords', async (req, res, next) => {
 	let { currentPrompt, title, length} = req.body
   
 	let prompt = ""

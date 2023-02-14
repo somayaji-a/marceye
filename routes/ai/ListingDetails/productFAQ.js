@@ -1,6 +1,6 @@
 
 const express = require('express');
-const openai = require('../middlewares/openai');
+const openai = require('../../middlewares/openai');
 
 let app = express.Router()
 
@@ -9,7 +9,7 @@ let app = express.Router()
 // output tokens: 50
 // output characters: 200
 
-app.post('/productFAQ', async (req, res, next) => {
+app.post('/ListingDetails/productFAQ', async (req, res, next) => {
 	let { description, title } = req.body
   
 	let prompt = ""
@@ -27,7 +27,7 @@ app.post('/productFAQ', async (req, res, next) => {
 	const gptResponse = await openai.createCompletion({
 		model: 'text-davinci-003',
 		prompt,
-		max_tokens: 500,
+		max_tokens: 1000,
 		temperature: 0,
 		top_p: 1,
 		frequency_penalty: 1,

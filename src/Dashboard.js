@@ -34,8 +34,8 @@ class Body extends Component {
 	}
 
 	//listing details
-	@computed get content() {
-		return this.permissions.filter(tool => tool.category === 'Content')
+	@computed get ListingDetails() {
+		return this.permissions.filter(tool => tool.category === 'Listing Details')
 	}
 
 	//Etsy listing research
@@ -76,10 +76,10 @@ class Body extends Component {
 				<Divider />
 			</> : null} */}
 
-			{this.content.length ? <>
+			{this.ListingDetails.length ? <>
 				<Title title="Listing Details" />
 				<Grid>
-					{this.content.map((tool, index) => 
+					{this.ListingDetails.map((tool, index) => 
 						<Tool 
 							key={index}
 							group={tool.category}

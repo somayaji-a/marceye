@@ -7,7 +7,7 @@ const obj = {
 
 	title: "Product Title",
 	desc: "Generate an Optimized Product Title.",
-	category: "Content",
+	category: "Listing Details",
 	Icon: ViewListIcon,
 	// tags: [],
 	permissions: ['user'],
@@ -15,8 +15,8 @@ const obj = {
 	fromColor: "yellow-400",
 	toColor: "yellow-600",
 
-	to: "/ai/producttitle",
-	api: "/ai/producttitle",
+	to: "/ai/ListingDetails/producttitle",
+	api: "/ai/ListingDetails/producttitle",
 
 	output: {
 		title: "Product Title",

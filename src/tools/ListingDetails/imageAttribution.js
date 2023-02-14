@@ -7,13 +7,13 @@ const obj = {
 
 	title: "Image Attribution",
 	desc: "Generate an image attribution for royalty free images found at sources like Wikimedia.",
-	category: "Content",
+	category: "Listing Details",
 	Icon: ClipboardListIcon,
 	// tags: [],
 	permissions: ['user'],
 
-	to: "/ai/imageAttribution",
-	api: "/ai/imageAttribution",
+	to: "/ai/ListingDetails/imageAttribution",
+	api: "/ai/ListingDetails/imageAttribution",
 	
 	fromColor: "yellow-400",
 	toColor: "yellow-600",

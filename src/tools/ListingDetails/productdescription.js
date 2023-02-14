@@ -7,13 +7,13 @@ const obj = {
 
 	title: "Product Description",
 	desc: "Quickly create SEO Optimized Product Descriptions",
-	category: "Content",
+	category: "Listing Details",
 	Icon: ClipboardListIcon,
 	// tags: [],
 	permissions: ['user'],
 
-	to: "/ai/productdescription",
-	api: "/ai/productdescription",
+	to: "/ai/ListingDetails/productdescription",
+	api: "/ai/ListingDetails/productdescription",
 	
 	fromColor: "yellow-400",
 	toColor: "yellow-600",
