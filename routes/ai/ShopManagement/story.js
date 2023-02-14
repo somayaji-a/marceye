@@ -8,7 +8,7 @@ app.post('/ShopManagement/story', async (req, res, next) => {
 	try {
 		let { name, why, what, mission } = req.body
 
-	let prompt = `Write a 250 word compelling story for the 'story' section of an Etsy shop, which describes the reason behind the creation of the shop. The story should convey an emotional and personal connection to the products being sold, and inspire trust in potential customers. Please include information about what inspired the shop, the values that the shop stands for, and any personal experiences that relate to the creation of the products. The story should be engaging, thought-provoking, and encourage customers to form a connection with the shop and the products being sold. The details of the shop are:\n`
+	let prompt = `Write a Story Headline and a 250 word compelling story for the 'story' section of an Etsy shop, which describes the reason behind the creation of the shop. The story should convey an emotional and personal connection to the products being sold, and inspire trust in potential customers. Please include information about what inspired the shop, the values that the shop stands for, and any personal experiences that relate to the creation of the products. The story should be engaging, thought-provoking, and encourage customers to form a connection with the shop and the products being sold. The details of the shop are:\n`
 
 	let inputRaw = `Shop name:${name}\nOwner values and backstory:${why}\nProduct types being sold:${what}\nMission statement:${mission}\n\n###\n\n`
 	prompt += inputRaw
