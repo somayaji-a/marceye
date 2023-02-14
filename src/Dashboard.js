@@ -16,22 +16,22 @@ class Body extends Component {
 		)
 	}
 
-	@computed get beta() {
-		return this.permissions.filter(tool => tool.category === 'Beta')
-	}
+	// @computed get beta() {
+	// 	return this.permissions.filter(tool => tool.category === 'Beta')
+	// }
 
 
-	@computed get personal() {
-		return this.permissions.filter(tool => tool.category === 'Personal')
+	@computed get CustomerManagement() {
+		return this.permissions.filter(tool => tool.category === 'Customer Management')
 	}
 
 	@computed get business() {
 		return this.permissions.filter(tool => tool.category === 'Business')
 	}
 
-	@computed get social() {
-		return this.permissions.filter(tool => tool.category === 'Social')
-	}
+	// @computed get social() {
+	// 	return this.permissions.filter(tool => tool.category === 'Social')
+	// }
 
 	//listing details
 	@computed get ListingDetails() {
@@ -94,24 +94,6 @@ class Body extends Component {
 				<Divider />
 				</> : null}
 
-			{this.etsyResearch.length ? <>
-				<Title title="Etsy Research" />
-				<Grid>
-					{this.etsyResearch.map((tool, index) => 
-						<Tool 
-							key={index}
-							group={tool.category}
-							title={tool.title} 
-							to={tool.to} 
-							Icon={tool.Icon} 
-							desc={tool.desc} 
-							fromColor={tool.fromColor} 
-							toColor={tool.toColor} 
-						/>)} 
-				</Grid>
-				<Divider />
-				</> : null}
-
 			{this.business.length ? <>
 				<Title title="Business" />
 				<Grid>
@@ -130,10 +112,10 @@ class Body extends Component {
 				<Divider />
 			</> : null}
 
-			{this.personal.length ? <>
-				<Title title="Personal" />
+			{this.CustomerManagement.length ? <>
+				<Title title="Customer Management" />
 				<Grid>
-					{this.personal.map((tool, index) => 
+					{this.CustomerManagement.map((tool, index) => 
 						<Tool 
 							key={index}
 							group={tool.category}
@@ -147,8 +129,25 @@ class Body extends Component {
 				</Grid>
 				<Divider />
 			</> : null}
-
-			{this.social.length ? <>
+			
+			{this.etsyResearch.length ? <>
+				<Title title="Etsy Research" />
+				<Grid>
+					{this.etsyResearch.map((tool, index) => 
+						<Tool 
+							key={index}
+							group={tool.category}
+							title={tool.title} 
+							to={tool.to} 
+							Icon={tool.Icon} 
+							desc={tool.desc} 
+							fromColor={tool.fromColor} 
+							toColor={tool.toColor} 
+						/>)} 
+				</Grid>
+				<Divider />
+				</> : null}
+			{/* {this.social.length ? <>
 				<Title title="Online" />
 				<Grid>
 					{this.social.map((tool, index) => 
@@ -164,7 +163,7 @@ class Body extends Component {
 						/>)} 
 				</Grid>
 				<Divider />
-			</> : null}
+			</> : null} */}
 
 </MainBody>
 </>)

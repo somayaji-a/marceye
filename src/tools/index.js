@@ -1,6 +1,6 @@
 //original
 import jobad from './jobad';
-import summarize from './summarize';
+
 import codeInterpret from './interpret';
 import intro from './intro';
 import helloworld from './helloworld';
@@ -14,8 +14,13 @@ import imageAttribution from './ListingDetails/imageAttribution';
 import imageGenerator from './ListingDetails/imageGenerator';
 import productFAQ from './ListingDetails/productFAQ';
 
+//CustomerManagement
+import reviewResponse from './CustomerManagement/reviewResponse';
+
 //EtsyResearch
 import etsyListingDetails from './EtsyResearch/etsyListingDetails';
+
+
 
 const TOOLS = [
 
@@ -23,7 +28,6 @@ const TOOLS = [
 	//codeInterpret,
 	//intro,
 	//jobad,
-	//summarize,
 	//helloworld,
 	//policydocument,
 	
@@ -31,10 +35,12 @@ const TOOLS = [
 	producttitle,
 	productdescription,
 	productkeywords,
-	
 	imageAttribution,
 	imageGenerator,
 	productFAQ,
+
+	//customerManagement
+	reviewResponse,
 
 	//EtsyResearch
 	etsyListingDetails,

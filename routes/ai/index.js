@@ -31,6 +31,9 @@ app.use('/', require('./ListingDetails/imageAttribution'));
 app.use('/', require('./ListingDetails/imageGenerator'));
 app.use('/', require('./ListingDetails/productFAQ'));
 
+//Customer Management
+app.use('/', require('./CustomerManagement/reviewResponse'));
+
 app.use('/', contentFilterCheck); 
 app.use('/', creditPayment); 
 app.use('/', saveToHistory); 
