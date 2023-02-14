@@ -25,8 +25,8 @@ class Body extends Component {
 		return this.permissions.filter(tool => tool.category === 'Customer Management')
 	}
 
-	@computed get business() {
-		return this.permissions.filter(tool => tool.category === 'Business')
+	@computed get ShopManagement() {
+		return this.permissions.filter(tool => tool.category === 'Shop Management')
 	}
 
 	// @computed get social() {
@@ -94,10 +94,10 @@ class Body extends Component {
 				<Divider />
 				</> : null}
 
-			{this.business.length ? <>
-				<Title title="Business" />
+			{this.ShopManagement.length ? <>
+				<Title title="Shop Management" />
 				<Grid>
-					{this.business.map((tool, index) => 
+					{this.ShopManagement.map((tool, index) => 
 						<Tool 
 							key={index}
 							group={tool.category}
@@ -129,7 +129,7 @@ class Body extends Component {
 				</Grid>
 				<Divider />
 			</> : null}
-			
+
 			{this.etsyResearch.length ? <>
 				<Title title="Etsy Research" />
 				<Grid>

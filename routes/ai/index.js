@@ -34,6 +34,9 @@ app.use('/', require('./ListingDetails/productFAQ'));
 //Customer Management
 app.use('/', require('./CustomerManagement/reviewResponse'));
 
+//Shop Management
+app.use('/', require('./ShopManagement/story'));
+
 app.use('/', contentFilterCheck); 
 app.use('/', creditPayment); 
 app.use('/', saveToHistory); 
