@@ -10,6 +10,7 @@ import productkeywords from './productkeywords';
 import etsyListingDetails from './etsyListingDetails';
 import imageAttribution from './imageAttribution';
 import imageGenerator from './imageGenerator';
+import productFAQ from './productFAQ';
 
 const TOOLS = [
 
@@ -25,6 +26,7 @@ const TOOLS = [
 	etsyListingDetails,
 	imageAttribution,
 	imageGenerator,
+	productFAQ,
 
 ]
 
