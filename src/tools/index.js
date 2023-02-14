@@ -1,5 +1,5 @@
 //original
-import jobad from './jobad';
+
 
 import codeInterpret from './interpret';
 import intro from './intro';
@@ -19,6 +19,7 @@ import reviewResponse from './CustomerManagement/reviewResponse';
 
 //ShopManagement
 import story from './ShopManagement/story';
+import privacyPolicy from './ShopManagement/privacyPolicy';
 
 //EtsyResearch
 import etsyListingDetails from './EtsyResearch/etsyListingDetails';
@@ -32,7 +33,7 @@ const TOOLS = [
 	//intro,
 	//jobad,
 	//helloworld,
-	//policydocument,
+
 	
 	//content
 	producttitle,
@@ -44,6 +45,7 @@ const TOOLS = [
 
 	//shopmanagement
 	story,
+	privacyPolicy,
 
 	//customerManagement
 	reviewResponse,

@@ -1,6 +1,6 @@
 
 const express = require('express');
-const openai = require('../middlewares/openai');
+const openai = require('../../middlewares/openai');
 
 let app = express.Router()
 
@@ -9,26 +9,27 @@ let app = express.Router()
 // output tokens: 50
 // output characters: 200
 
-app.post('/business/policydocument', async (req, res, next) => {
-	let { content, currentPrompt, title, organization, details} = req.body
+app.post('/ShopManagement/privacyPolicy', async (req, res, next) => {
+	let { shop, details, contact} = req.body
   
 	let prompt = ""
 	let inputRaw = ""
 
-	if(currentPrompt === "Policy Document Details"){
-		prompt = `Create a detailed Policy Document from the following details:\n###`
-	 
+		prompt = `Create a detailed GPDR compliant Privacy Policy with standard wording for an ecommerce store from the following details:\n\n` 
 
-	  inputRaw = `TITLE: ${title}\nORGANIZATION: ${organization}\nDETAILS: ${details}\nJOB AD:\n`
+	 
+		inputRaw = `Shop Name: ${shop}\n` + 
+		`${details ? `Unique Policy Details: ${details}\n` : ``}` + 
+		`${contact ? `Contact Information: ${contact}\n` : ``}` +
+		`\n\n###\n\n`
+
 	  prompt += inputRaw
-	}
-  
 	
   
 	const gptResponse = await openai.createCompletion({
 		model: 'text-davinci-003',
 		prompt,
-		max_tokens: 250,
+		max_tokens: 1000,
 		temperature: 0.5,
 		top_p: 1,
 		frequency_penalty: 0,
@@ -37,7 +38,7 @@ app.post('/business/policydocument', async (req, res, next) => {
 		best_of: 1,
 		user: req.user._id,
 		stream: false,
-		stop: ["###", "<|endoftext|>","JOB AD","TEXT" ],
+		stop: ["###", "<|endoftext|>" ],
 	});
   
 	let output = `${gptResponse.data.choices[0].text}`

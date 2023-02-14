@@ -36,6 +36,7 @@ app.use('/', require('./CustomerManagement/reviewResponse'));
 
 //Shop Management
 app.use('/', require('./ShopManagement/story'));
+app.use('/', require('./ShopManagement/privacyPolicy'));
 
 app.use('/', contentFilterCheck); 
 app.use('/', creditPayment); 
