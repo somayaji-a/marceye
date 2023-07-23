@@ -15,33 +15,23 @@ app.post('/ListingDetails/productdescription', async (req, res, next) => {
 	let prompt = ""
 	let inputRaw = ""
 
-	if(currentPrompt === "Product Description Details"){
-		prompt = `Write a unique and compelling product description for a ${title} that includes relevant keywords that have high search volume and low competition on search engines. The keywords used in the product description should accurately describe the product's features and benefits while also being specific and relevant to the target audience. The description should be at least 300 words and should highlight the product's unique features and benefits while also incorporating persuasive language to encourage purchase. Shoppers will only see the first few lines of your description at first, so please ensure the first few lines are compelling and informative. At the end, the description should thank the shopper for choosing my store: ${organization}. The desciption should also consider the following specific details about my product: ${details}
-		`
-	 
+		prompt = `Title: ${title}\n Organization: ${organization}\n Details: ${details}`
 
 	  inputRaw = `\n###`
 	  prompt += inputRaw
-	}
   
-	
-  
-	const gptResponse = await openai.createCompletion({
-		model: 'text-davinci-003',
-		prompt,
-		max_tokens: 500,
-		temperature: 0,
-		top_p: 1,
+	const gptResponse = await openai.createChatCompletion({
+		model: 'gpt-4',
+		messages: [{"role": "system", "content": "You are an e-commerce AI assistant that helps users generate a unique and compelling product description given a product title that includes relevant keywords that have high search volume and low competition on search engines. The keywords used in the product description should accurately describe the product's features and benefits while also being specific and relevant to the target audience. The description should be at least 300 words but not more than 500 and should highlight the product's unique features and benefits while also incorporating persuasive language to encourage purchase. Shoppers will only see the first few lines of the description at first, so  ensure the first few lines are compelling and informative. At the end, the description should thank the shopper for choosing the store that is identified by the user (Organization). The desciption should also consider the specific details about the product specified by the user. Where it makes more sense, use lists and bullets instead of full paragraphs."}, {"role":"user", "content": prompt}],
 		frequency_penalty: 1,
 		presence_penalty: 1,
 		n: 1,
-		best_of: 1,
 		user: req.user._id,
 		stream: false,
-		stop: ["###", "<|endoftext|>","JOB AD","TEXT" ],
+		stop: ["###", "<|endoftext|>", ],
 	});
   
-	let output = `${gptResponse.data.choices[0].text}`
+	let output = `${gptResponse.data.choices[0].message.content}`
 
 	req.locals.input = prompt
 	req.locals.inputRaw = inputRaw

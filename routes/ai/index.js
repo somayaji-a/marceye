@@ -45,6 +45,7 @@ app.use('/', saveToHistory);
 //add modules here that bypass the credit check and query save
 //Etsy Research
 app.use('/', require('./EtsyResearch/etsyListingDetails'));
+app.use('/', require('./EtsyResearch/copyEtsyListing'));
 
 app.use('/', sendResponse); 
 

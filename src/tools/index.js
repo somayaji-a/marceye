@@ -23,6 +23,7 @@ import privacyPolicy from './ShopManagement/privacyPolicy';
 
 //EtsyResearch
 import etsyListingDetails from './EtsyResearch/etsyListingDetails';
+// import copyEtsyListing from './EtsyResearch/copyEtsyListing'
 
 
 
@@ -52,6 +53,7 @@ const TOOLS = [
 
 	//EtsyResearch
 	etsyListingDetails,
+	// copyEtsyListing,
 ]
 
 export default TOOLS

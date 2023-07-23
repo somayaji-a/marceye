@@ -15,7 +15,7 @@ app.post('/ShopManagement/privacyPolicy', async (req, res, next) => {
 	let prompt = ""
 	let inputRaw = ""
 
-		prompt = `Create a detailed GPDR compliant Privacy Policy with standard wording for an ecommerce store from the following details:\n\n` 
+		prompt = `` 
 
 	 
 		inputRaw = `Shop Name: ${shop}\n` + 
@@ -26,22 +26,18 @@ app.post('/ShopManagement/privacyPolicy', async (req, res, next) => {
 	  prompt += inputRaw
 	
   
-	const gptResponse = await openai.createCompletion({
-		model: 'text-davinci-003',
-		prompt,
-		max_tokens: 1000,
-		temperature: 0.5,
-		top_p: 1,
-		frequency_penalty: 0,
-		presence_penalty: 0,
+	  const gptResponse = await openai.createChatCompletion({
+		model: 'gpt-4',
+		messages: [{"role": "system", "content": "You are an e-commerce AI assistant that helps users generate a detailed GPDR compliant Privacy Policy with standard wording for an e-commerce store from the store details the user provides.\n\n"}, {"role":"user", "content": prompt}],
+		frequency_penalty: 1,
+		presence_penalty: 1,
 		n: 1,
-		best_of: 1,
 		user: req.user._id,
 		stream: false,
-		stop: ["###", "<|endoftext|>" ],
+		stop: ["###", "<|endoftext|>", ],
 	});
-  
-	let output = `${gptResponse.data.choices[0].text}`
+
+	let output = `${gptResponse.data.choices[0].message.content}`
 
 	req.locals.input = prompt
 	req.locals.inputRaw = inputRaw

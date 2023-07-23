@@ -15,32 +15,27 @@ app.post('/ListingDetails/productkeywords', async (req, res, next) => {
 	let prompt = ""
 	let inputRaw = ""
 
-	if(currentPrompt === "Product Detail"){
-		prompt = `Please generate a list of 10 relevant keywords for ${title} that have high search volume and low competition on search engines. The keywords should accurately describe the product's features and benefits while also being specific and relevant to the target audience. The keywords should have a maximum length of ${length} characters each and should not reuse words that were used in the other keywords.`
+	prompt = `Title: ${title}\n Length: ${length}.`
 	 
-
 	  inputRaw = `\n###\n`
 	  prompt += inputRaw
-	}
-  
+
 	
-  
-	const gptResponse = await openai.createCompletion({
-		model: 'text-davinci-003',
-		prompt,
-		max_tokens: 250,
-		temperature: 0,
-		top_p: 1,
-		frequency_penalty: 0,
-		presence_penalty: 0,
+	const gptResponse = await openai.createChatCompletion({
+		model: 'gpt-4',
+		messages: [{"role": "system", "content": "You are an e-commerce AI assistant that helps users generate a list of 10 relevant keywords for a given description that have high search volume and low competition on search engines. The keywords should accurately describe the product's features and benefits while also being specific and relevant to the target audience. The keywords should have a maximum length of characters as specified by the user and should not reuse words that were used in the other keywords."}, {"role":"user", "content": prompt}],
+		// max_tokens: 100,
+		// temperature: 0.5,
+		// top_p: 1,
+		frequency_penalty: 1,
+		presence_penalty: 1,
 		n: 1,
-		best_of: 1,
 		user: req.user._id,
 		stream: false,
-		stop: ["###", "<|endoftext|>"],
+		stop: ["###", "<|endoftext|>", ],
 	});
   
-	let output = `${gptResponse.data.choices[0].text}`
+	let output = `${gptResponse.data.choices[0].message.content}`
 
 	req.locals.input = prompt
 	req.locals.inputRaw = inputRaw

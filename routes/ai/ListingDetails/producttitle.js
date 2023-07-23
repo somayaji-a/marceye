@@ -8,17 +8,18 @@ app.post('/ListingDetails/producttitle', async (req, res, next) => {
 	try {
 		let { description } = req.body
 
-	let prompt = `Please generate a title for a ${description} that is attention-grabbing, accurately describes the product's features and benefits, and includes relevant keywords with high search volume and low competition on search engines. The title should be no more than 60 characters long and should be optimized for both search engines and human readers.  `
+	let prompt = description 
 
 	let inputRaw = `\n###` // here is where people enter stuff
 	prompt += inputRaw
 
-	const gptResponse = await openai.createCompletion({
-		model: 'text-davinci-003',
-		prompt,
-		max_tokens: 100,
-		temperature: 0.5,
-		top_p: 1,
+
+	const gptResponse = await openai.createChatCompletion({
+		model: 'gpt-4',
+		messages: [{"role": "system", "content": "You are an e-commerce AI assistant that helps users generate a title given a description that is attention-grabbing, accurately describes the product's features and benefits, and includes relevant keywords with high search volume and low competition on search engines. The title should be no more than 60 characters long and should be optimized for both search engines and human readers."}, {"role":"user", "content": prompt}],
+		// max_tokens: 100,
+		// temperature: 0.5,
+		// top_p: 1,
 		frequency_penalty: 1,
 		presence_penalty: 1,
 		n: 1,
@@ -27,7 +28,7 @@ app.post('/ListingDetails/producttitle', async (req, res, next) => {
 		stop: ["###", "<|endoftext|>", ],
 	});
 
-	let output = `${gptResponse.data.choices[0].text}`
+	let output = `${gptResponse.data.choices[0].message.content}`
 
 	// remove the first character from output
 	output = output.substring(1, output.length)
