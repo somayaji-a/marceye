@@ -1,0 +1,13 @@
+{
+    "presets": ["next/babel"],
+  
+      [
+        "babel-plugin-twin",
+        {
+          "debug": false
+        }
+      ], // ensure this comes first
+  
+      "babel-plugin-macros" // before this
+    ]
+  }

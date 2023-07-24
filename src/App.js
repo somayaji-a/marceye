@@ -27,6 +27,9 @@ import Login from './Login/Login'
 import Profile from './Profile/'
 import LoginSuccess from './Login/Success'
 
+import Landing from './Landing/Landing'; // Adjust the path according to where you create your Landing component
+
+
 import './App.scss'
 
 if(!window.store){
@@ -78,11 +81,17 @@ class App extends Component {
                 </Switch>
                 </>} </> : <> {/*  Not Logged In */}
                 <Switch>
+                    <Route path="/" exact component={Landing} />
+                    <Route path="/login" component={Login} />
+                </Switch>
+                
+                
+                {/* <Switch>
                   <Route path="/" exact>
                     <Redirect to="/login" />
                   </Route>
                   <Route path="/" component={Login} />
-                </Switch>
+                </Switch> */}
             </>}
            </Router>
         </Provider>
