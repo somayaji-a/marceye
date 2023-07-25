@@ -1,184 +1,291 @@
-import React from "react";
-// import tw from "twin.macro";
-import { css } from "styled-components/macro"; //eslint-disable-line
-import AnimationRevealPage from "./helpers/AnimationRevealPage.js";
-import Hero from "./components/hero/TwoColumnWithInput.js";
-import Features from "./components/features/ThreeColWithSideImage.js";
-import MainFeature from "./components/features/TwoColWithButton.js";
-import MainFeature2 from "./components/features/TwoColWithTwoHorizontalFeaturesAndButton.js";
-import FeatureWithSteps from "./components/features/TwoColWithSteps.js";
-import Pricing from "./components/pricing/ThreePlans.js";
-import Testimonial from "./components/testimonials/TwoColumnWithImageAndRating.js";
-import FAQ from "./components/faqs/SingleCol.js";
-import GetStarted from "./components/cta/GetStarted";
-import Footer from "./components/footers/FiveColumn WithBackground.js";
-import heroScreenshotImageSrc from "./images/hero-screenshot-1.png";
-import macHeroScreenshotImageSrc from "./images/hero-screenshot-2.png";
-import prototypeIllustrationImageSrc from "./images/prototype-illustration.svg";
-import { ReactComponent as BriefcaseIcon } from "feather-icons/dist/icons/briefcase.svg";
-import { ReactComponent as MoneyIcon } from "feather-icons/dist/icons/dollar-sign.svg";
+// import React from 'react';
 
-export default () => {
-  const Subheading = tw.span`uppercase tracking-widest font-bold text-primary-500`;
-  const HighlightedText = tw.span`text-primary-500`;
+// const LandingPage = () => {
+//   return (
+//     <div className="flex flex-col justify-center items-center">
+//       {/* Hero Section */}
+//       <section className="text-center p-10">
+//         <h1 className="text-4xl font-bold mb-4">Welcome to Our SaaS App!</h1>
+//         <p className="text-lg">Your solution for better management.</p>
+//       </section>
+
+//       {/* Feature Section */}
+//       <section className="p-10 grid grid-cols-1 md:grid-cols-3 gap-4">
+//         <div className="feature">
+//           <h2 className="text-2xl font-bold mb-2">Feature 1</h2>
+//           <p>Description for feature 1</p>
+//         </div>
+//         <div className="feature">
+//           <h2 className="text-2xl font-bold mb-2">Feature 2</h2>
+//           <p>Description for feature 2</p>
+//         </div>
+//         <div className="feature">
+//           <h2 className="text-2xl font-bold mb-2">Feature 3</h2>
+//           <p>Description for feature 3</p>
+//         </div>
+//       </section>
+
+//       {/* Pricing Section */}
+//       <section className="p-10 grid grid-cols-1 md:grid-cols-3 gap-4">
+//         <div className="pricing">
+//           <h2 className="text-2xl font-bold mb-2">Basic Plan</h2>
+//           <p>$10/month</p>
+//         </div>
+//         <div className="pricing">
+//           <h2 className="text-2xl font-bold mb-2">Pro Plan</h2>
+//           <p>$20/month</p>
+//         </div>
+//         <div className="pricing">
+//           <h2 className="text-2xl font-bold mb-2">Enterprise Plan</h2>
+//           <p>Contact us for pricing</p>
+//         </div>
+//       </section>
+
+//       {/* Testimonial Section */}
+//       <section className="p-10">
+//         <h2 className="text-2xl font-bold mb-4">What our customers say</h2>
+//         <blockquote className="border-l-4 border-gray-500 pl-4 text-lg italic">
+//           <p>"This is the best SaaS app I've ever used!"</p>
+//           <cite>- Happy Customer</cite>
+//         </blockquote>
+//       </section>
+//     </div>
+//   );
+// };
+
+// export default LandingPage;
+
+import React, { useState } from 'react';
+import { Dialog } from '@headlessui/react';
+import { MenuIcon, XIcon  } from '@heroicons/react/outline';
+import { CloudUploadIcon, LockClosedIcon, DatabaseIcon  } from '@heroicons/react/solid';
+
+
+const navigation = [
+  { name: 'Product', href: '#' },
+  { name: 'Features', href: '#' },
+  { name: 'Marketplace', href: '#' },
+  { name: 'Company', href: '#' },
+];
+
+const features = [
+  {
+    name: 'Push to deploy.',
+    description:
+      'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
+    icon: CloudUploadIcon,
+  },
+  {
+    name: 'SSL certificates.',
+    description: 'Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo.',
+    icon: LockClosedIcon,
+  },
+  {
+    name: 'Database backups.',
+    description: 'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.',
+    icon: DatabaseIcon,
+  },
+];
+
+const LandingPage = () => {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <AnimationRevealPage>
-      <Hero roundedHeaderButton={true} />
-      <Features
-        subheading={<Subheading>Features</Subheading>}
-        heading={
-          <>
-            We have Amazing <HighlightedText>Service.</HighlightedText>
-          </>
-        }
-      />
-      <MainFeature
-        subheading={<Subheading>Quality Work</Subheading>}
-        imageSrc={heroScreenshotImageSrc}
-        imageBorder={true}
-        imageDecoratorBlob={true}
-      />
-      <FeatureWithSteps
-        subheading={<Subheading>STEPS</Subheading>}
-        heading={
-          <>
-            Easy to <HighlightedText>Get Started.</HighlightedText>
-          </>
-        }
-        textOnLeft={false}
-        imageSrc={macHeroScreenshotImageSrc}
-        imageDecoratorBlob={true}
-        decoratorBlobCss={tw`xl:w-40 xl:h-40 opacity-15 -translate-x-1/2 left-1/2`}
-      />
-      <MainFeature2
-        subheading={<Subheading>VALUES</Subheading>}
-        heading={
-          <>
-            We Always Abide by Our <HighlightedText>Principles.</HighlightedText>
-          </>
-        }
-        imageSrc={prototypeIllustrationImageSrc}
-        showDecoratorBlob={false}
-        features={[
-          {
-            Icon: MoneyIcon,
-            title: "Affordable",
-            description: "We promise to offer you the best rate we can - at par with the industry standard.",
-            iconContainerCss: tw`bg-green-300 text-green-800`
-          },
-          {
-            Icon: BriefcaseIcon,
-            title: "Professionalism",
-            description: "We assure you that our templates are designed and created by professional designers.",
-            iconContainerCss: tw`bg-red-300 text-red-800`
-          }
-        ]}
-      />
-      <Pricing
-        subheading={<Subheading>Pricing</Subheading>}
-        heading={
-          <>
-            Reasonable & Flexible <HighlightedText>Plans.</HighlightedText>
-          </>
-        }
-        plans={[
-          {
-            name: "Personal",
-            price: "$17.99",
-            duration: "Monthly",
-            mainFeature: "For Individuals",
-            features: ["30 Templates", "7 Landing Pages", "12 Internal Pages", "Basic Assistance"]
-          },
-          {
-            name: "Business",
-            price: "$37.99",
-            duration: "Monthly",
-            mainFeature: "For Small Businesses",
-            features: ["60 Templates", "15 Landing Pages", "22 Internal Pages", "Priority Assistance"],
-            featured: true
-          },
-          {
-            name: "Enterprise",
-            price: "$57.99",
-            duration: "Monthly",
-            mainFeature: "For Large Companies",
-            features: ["90 Templates", "27 Landing Pages", "37 Internal Pages", "Personal Assistance"]
-          }
-        ]}
-      />
-      <Testimonial
-        subheading={<Subheading>Testimonials</Subheading>}
-        heading={
-          <>
-            Our Clients <HighlightedText>Love Us.</HighlightedText>
-          </>
-        }
-        testimonials={[
-          {
-            stars: 5,
-            profileImageSrc:
-              "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=3.25&w=512&h=512&q=80",
-            heading: "Amazing User Experience",
-            quote:
-              "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.",
-            customerName: "Charlotte Hale",
-            customerTitle: "Director, Delos Inc."
-          },
-          {
-            stars: 5,
-            profileImageSrc:
-              "https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2.25&w=512&h=512&q=80",
-            heading: "Love the Developer Experience and Design Principles !",
-            quote:
-              "Sinor Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
-            customerName: "Adam Cuppy",
-            customerTitle: "Founder, EventsNYC"
-          }
-        ]}
-      />
-      <FAQ
-        subheading={<Subheading>FAQS</Subheading>}
-        heading={
-          <>
-            You have <HighlightedText>Questions ?</HighlightedText>
-          </>
-        }
-        faqs={[
-          {
-            question: "Are all the templates easily customizable ?",
-            answer:
-              "Yes, they all are. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-          },
-          {
-            question: "How long do you usually support an standalone template for ?",
-            answer:
-              "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-          },
-          {
-            question: "What kind of payment methods do you accept ?",
-            answer:
-              "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-          },
-          {
-            question: "Is there a subscribption service to get the latest templates ?",
-            answer:
-              "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-          },
-          {
-            question: "Are the templates compatible with the React ?",
-            answer:
-              "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-          },
-          {
-            question: "Do you really support Internet Explorer 11 ?",
-            answer:
-              "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-          }
-        ]}
-      />
-      <GetStarted/>
-      <Footer />
-    </AnimationRevealPage>
+    <div className="flex flex-col justify-center items-center">
+      {/* Hero Section */}
+      <div className="bg-white">
+        <header className="absolute inset-x-0 top-0 z-50">
+          <nav className="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
+            <div className="flex lg:flex-1">
+              <a href="#" className="-m-1.5 p-1.5">
+                <span className="sr-only">Your Company</span>
+                <img
+                  className="h-8 w-auto"
+                  src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
+                  alt=""
+                />
+              </a>
+            </div>
+            <div className="flex lg:hidden">
+              <button
+                type="button"
+                className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
+                onClick={() => setMobileMenuOpen(true)}
+              >
+                <span className="sr-only">Open main menu</span>
+                <MenuIcon className="h-6 w-6" aria-hidden="true" />
+              </button>
+            </div>
+            <div className="hidden lg:flex lg:gap-x-12">
+              {navigation.map((item) => (
+                <a key={item.name} href={item.href} className="text-sm font-semibold leading-6 text-gray-900">
+                  {item.name}
+                </a>
+              ))}
+            </div>
+            <div className="hidden lg:flex lg:flex-1 lg:justify-end">
+              <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
+                Log in <span aria-hidden="true">&rarr;</span>
+              </a>
+            </div>
+          </nav>
+          <Dialog as="div" className="lg:hidden" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
+          <div className="fixed inset-0 z-50" />
+          <Dialog.Panel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+            <div className="flex items-center justify-between">
+              <a href="#" className="-m-1.5 p-1.5">
+                <span className="sr-only">Your Company</span>
+                <img
+                  className="h-8 w-auto"
+                  src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
+                  alt=""
+                />
+              </a>
+              <button
+                type="button"
+                className="-m-2.5 rounded-md p-2.5 text-gray-700"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                <span className="sr-only">Close menu</span>
+                <XIcon className="h-6 w-6" aria-hidden="true" />
+              </button>
+            </div>
+            <div className="mt-6 flow-root">
+              <div className="-my-6 divide-y divide-gray-500/10">
+                <div className="space-y-2 py-6">
+                  {navigation.map((item) => (
+                    <a
+                      key={item.name}
+                      href={item.href}
+                      className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                    >
+                      {item.name}
+                    </a>
+                  ))}
+                </div>
+                <div className="py-6">
+                  <a
+                    href="#"
+                    className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                  >
+                    Log in
+                  </a>
+                </div>
+              </div>
+            </div>
+          </Dialog.Panel>
+        </Dialog>
+        </header>
+
+        <div className="relative isolate px-6 pt-14 lg:px-8">
+        <div
+          className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
+          aria-hidden="true"
+        >
+          <div
+            className="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
+            style={{
+              clipPath:
+                'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',
+            }}
+          />
+        </div>
+        <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
+          <div className="hidden sm:mb-8 sm:flex sm:justify-center">
+            <div className="relative rounded-full px-3 py-1 text-sm leading-6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
+              Announcing our next round of funding.{' '}
+              <a href="#" className="font-semibold text-indigo-600">
+                <span className="absolute inset-0" aria-hidden="true" />
+                Read more <span aria-hidden="true">&rarr;</span>
+              </a>
+            </div>
+          </div>
+          <div className="text-center">
+            <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
+              Data to enrich your online business
+            </h1>
+            <p className="mt-6 text-lg leading-8 text-gray-600">
+              Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet
+              fugiat veniam occaecat fugiat aliqua.
+            </p>
+            <div className="mt-10 flex items-center justify-center gap-x-6">
+              <a
+                href="#"
+                className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+              >
+                Get started
+              </a>
+              <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
+                Learn more <span aria-hidden="true">→</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div
+          className="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"
+          aria-hidden="true"
+        >
+          <div
+            className="relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]"
+            style={{
+              clipPath:
+                'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',
+            }}
+          />
+        </div>
+      </div>
+    </div>
+  
+
+      {/* Feature Section */}
+      <section className="p-10 grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div className="overflow-hidden bg-white py-24 sm:py-32">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
+          <div className="lg:pr-8 lg:pt-4">
+            <div className="lg:max-w-lg">
+              <h2 className="text-base font-semibold leading-7 text-indigo-600">Deploy faster</h2>
+              <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">A better workflow</p>
+              <p className="mt-6 text-lg leading-8 text-gray-600">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque,
+                iste dolor cupiditate blanditiis ratione.
+              </p>
+              <dl className="mt-10 max-w-xl space-y-8 text-base leading-7 text-gray-600 lg:max-w-none">
+                {features.map((feature) => (
+                  <div key={feature.name} className="relative pl-9">
+                    <dt className="inline font-semibold text-gray-900">
+                      <feature.icon className="absolute left-1 top-1 h-5 w-5 text-indigo-600" aria-hidden="true" />
+                      {feature.name}
+                    </dt>{' '}
+                    <dd className="inline">{feature.description}</dd>
+                  </div>
+                ))}
+              </dl>
+            </div>
+          </div>
+          <img
+            src="https://tailwindui.com/img/component-images/dark-project-app-screenshot.png"
+            alt="Product screenshot"
+            className="w-[48rem] max-w-none rounded-xl shadow-xl ring-1 ring-gray-400/10 sm:w-[57rem] md:-ml-4 lg:-ml-0"
+            width={2432}
+            height={1442}
+          />
+        </div>
+        </div>
+      </div>
+      </section>
+
+      {/* Pricing Section */}
+      <section className="p-10 grid grid-cols-1 md:grid-cols-3 gap-4">
+        {/* Rest of the code */}
+      </section>
+
+      {/* Testimonial Section */}
+      <section className="p-10">
+        {/* Rest of the code */}
+      </section>
+    </div>
   );
-}
+};
+
+export default LandingPage;
