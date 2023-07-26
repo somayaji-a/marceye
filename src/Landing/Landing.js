@@ -2,39 +2,38 @@ import React, { Fragment, useState } from 'react';
 import { Dialog } from '@headlessui/react';
 import { MenuIcon, XIcon  } from '@heroicons/react/outline';
 import { CloudUploadIcon, LockClosedIcon, DatabaseIcon, CheckIcon  } from '@heroicons/react/solid';
-import { NavLink } from 'react-router-dom'
 import Logo from '../Logo.js'
 
 const navigation = [
-  { name: 'Features', href: '#' },
-  { name: 'Pricing', href: '#' },
-  { name: 'Testimonials', href: '#' },
+  { name: 'Features', href: '#features' },
+  { name: 'Pricing', href: '#pricing' },
+  { name: 'Testimonials', href: '#testimonials' },
 ];
 
 const features = [
   {
-    name: 'Push to deploy.',
+    name: 'Fine Tuned Generative Models',
     description:
-      'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
+      'Our highly fine tuned generative models will craft the perfect SEO friendly content, description, tags, etc. for your product, helping you focus on all the other aspects of your business.',
     icon: CloudUploadIcon,
   },
   {
-    name: 'SSL certificates.',
-    description: 'Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo.',
+    name: 'Research Tools',
+    description: 'Don\'t reinvent the wheel. We have a growing set of tools that help you analyze top performing listings from other sellers, learn from what they do best, and apply it to your own listings.',
     icon: LockClosedIcon,
   },
   {
-    name: 'Database backups.',
-    description: 'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.',
+    name: 'Automation',
+    description: 'The more your shop grows, the more you will need to spend time on things that you don\'t want to. Use our tools to automate order tracking, responses to reviews, and more.',
     icon: DatabaseIcon,
   },
 ];
 
 const includedFeatures = [
-  'Private forum access',
-  'Member resources',
-  'Entry to annual conference',
-  'Official member t-shirt',
+  'Access to all tools',
+  '100 credits',
+  'Input into new feature development',
+  'Hundreds of hours of time saved',
 ];
 
 const LandingPage = () => {
@@ -133,7 +132,7 @@ const LandingPage = () => {
           />
         </div>
         <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
-          <div className="hidden sm:mb-8 sm:flex sm:justify-center">
+          {/* <div className="hidden sm:mb-8 sm:flex sm:justify-center">
             <div className="relative rounded-full px-3 py-1 text-sm leading-6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
               Announcing our next round of funding.{' '}
               <a href="#" className="font-semibold text-indigo-600">
@@ -141,23 +140,22 @@ const LandingPage = () => {
                 Read more <span aria-hidden="true">&rarr;</span>
               </a>
             </div>
-          </div>
+          </div> */}
           <div className="text-center">
             <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
-              Data to enrich your online business
+              Decouple from content and focus on selling.
             </h1>
             <p className="mt-6 text-lg leading-8 text-gray-600">
-              Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet
-              fugiat veniam occaecat fugiat aliqua.
+            AI powered tools that help you with all aspects of content generation for your e-commerce business.
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
               <a
-                href="#"
+                href="/signup"
                 className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
               >
-                Get started
+                Sign Up For Free
               </a>
-              <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
+              <a href="#features" className="text-sm font-semibold leading-6 text-gray-900">
                 Learn more <span aria-hidden="true">→</span>
               </a>
             </div>
@@ -180,17 +178,17 @@ const LandingPage = () => {
   
 
       {/* Feature Section */}
-      <section className="">
+      <section id="features" className="">
         <div className="overflow-hidden bg-white py-24 sm:py-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
           <div className="lg:pr-8 lg:pt-4">
             <div className="lg:max-w-lg">
-              <h2 className="text-base font-semibold leading-7 text-indigo-600">Deploy faster</h2>
-              <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">A better workflow</p>
+              <h2 className="text-base font-semibold leading-7 text-indigo-600">Sell easier</h2>
+              <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">A better way to sell</p>
               <p className="mt-6 text-lg leading-8 text-gray-600">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque,
-                iste dolor cupiditate blanditiis ratione.
+              Selling online has never been harder. Generating relevant content, keywords, titles, descriptions, and more in order to rank high on marketplace and search engines is difficult. Spending time on this takes you away from what you do best as the master of your craft. Whether it's woodworking, jewelry, art, crafts, or anything else, you should be spending your time doing that, not on all the other stuff needed to get your products out to the world.
+              
               </p>
               <dl className="mt-10 max-w-xl space-y-8 text-base leading-7 text-gray-600 lg:max-w-none">
                 {features.map((feature) => (
@@ -218,23 +216,21 @@ const LandingPage = () => {
       </section>
 
       {/* Pricing Section */}
-      <section >
+      <section id="pricing" >
         {/* className="p-10 grid grid-cols-1 md:grid-cols-3 gap-4" */}
         <div className="bg-white py-24 sm:py-32">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl sm:text-center">
-          <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Simple no-tricks pricing</h2>
+          <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Three Simple Plans</h2>
           <p className="mt-6 text-lg leading-8 text-gray-600">
-            Distinctio et nulla eum soluta et neque labore quibusdam. Saepe et quasi iusto modi velit ut non voluptas
-            in. Explicabo id ut laborum.
+            Try it out for free (no credit card required, and no spam - ever) and if you like it, upgrade to one of our plans.
           </p>
         </div>
         <div className="mx-auto mt-16 max-w-2xl rounded-3xl ring-1 ring-gray-200 sm:mt-20 lg:mx-0 lg:flex lg:max-w-none">
           <div className="p-8 sm:p-10 lg:flex-auto">
-            <h3 className="text-2xl font-bold tracking-tight text-gray-900">Lifetime membership</h3>
+            <h3 className="text-2xl font-bold tracking-tight text-gray-900">Entry Plan</h3>
             <p className="mt-6 text-base leading-7 text-gray-600">
-              Lorem ipsum dolor sit amet consect etur adipisicing elit. Itaque amet indis perferendis blanditiis
-              repellendus etur quidem assumenda.
+              Our basic plan for most people. Get started generating, analyzing, and more with our comprehensive plan. Upgrade to Pro for early access to new features, and more AI credits per month.
             </p>
             <div className="mt-10 flex items-center gap-x-4">
               <h4 className="flex-none text-sm font-semibold leading-6 text-indigo-600">What’s included</h4>
@@ -255,19 +251,19 @@ const LandingPage = () => {
           <div className="-mt-2 p-2 lg:mt-0 lg:w-full lg:max-w-md lg:flex-shrink-0">
             <div className="rounded-2xl bg-gray-50 py-10 text-center ring-1 ring-inset ring-gray-900/5 lg:flex lg:flex-col lg:justify-center lg:py-16">
               <div className="mx-auto max-w-xs px-8">
-                <p className="text-base font-semibold text-gray-600">Pay once, own it forever</p>
+                <p className="text-base font-semibold text-gray-600">Starting from</p>
                 <p className="mt-6 flex items-baseline justify-center gap-x-2">
-                  <span className="text-5xl font-bold tracking-tight text-gray-900">$349</span>
-                  <span className="text-sm font-semibold leading-6 tracking-wide text-gray-600">USD</span>
+                  <span className="text-5xl font-bold tracking-tight text-gray-900">$5</span>
+                  <span className="text-sm font-semibold leading-6 tracking-wide text-gray-600">USD/month</span>
                 </p>
                 <a
-                  href="#"
+                  href="/signup"
                   className="mt-10 block w-full rounded-md bg-indigo-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                 >
-                  Get access
+                  Sign Up
                 </a>
                 <p className="mt-6 text-xs leading-5 text-gray-600">
-                  Invoices and receipts available for easy company reimbursement
+                  All payment processing is done through Stripe for safe, secure transactions.
                 </p>
               </div>
             </div>
@@ -278,15 +274,14 @@ const LandingPage = () => {
       </section>
 
       {/* Testimonial Section */}
-      <section className="relative isolate overflow-hidden bg-white px-6 py-24 sm:py-32 lg:px-8">
+      <section id="testimonials" className="relative isolate overflow-hidden bg-white px-6 py-24 sm:py-32 lg:px-8">
         <div className="absolute inset-0 -z-10 bg-[radial-gradient(45rem_50rem_at_top,theme(colors.indigo.100),white)] opacity-20" />
         <div className="mx-auto max-w-2xl lg:max-w-4xl">
           <img className="mx-auto h-12" src="https://tailwindui.com/img/logos/workcation-logo-indigo-600.svg" alt="" />
           <figure className="mt-10">
             <blockquote className="text-center text-xl font-semibold leading-8 text-gray-900 sm:text-2xl sm:leading-9">
               <p>
-                “Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo expedita voluptas culpa sapiente alias
-                molestiae. Numquam corrupti in laborum sed rerum et corporis.”
+                “Can’t believe the description it manages to create just by a few choice words 🤯”
               </p>
             </blockquote>
             <figcaption className="mt-10">
@@ -296,11 +291,11 @@ const LandingPage = () => {
                 alt=""
               />
               <div className="mt-4 flex items-center justify-center space-x-3 text-base">
-                <div className="font-semibold text-gray-900">Judith Black</div>
-                <svg viewBox="0 0 2 2" width={3} height={3} aria-hidden="true" className="fill-gray-900">
+                <div className="font-semibold text-gray-900">Reddit User</div>
+                {/* <svg viewBox="0 0 2 2" width={3} height={3} aria-hidden="true" className="fill-gray-900">
                   <circle cx={1} cy={1} r={1} />
-                </svg>
-                <div className="text-gray-600">CEO of Workcation</div>
+                </svg> */}
+                {/* <div className="text-gray-600">Reddit user</div> */}
               </div>
             </figcaption>
           </figure>

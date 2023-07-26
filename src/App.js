@@ -80,18 +80,18 @@ class App extends Component {
                   </Route>
                 </Switch>
                 </>} </> : <> {/*  Not Logged In */}
-                <Switch>
+                {/* <Switch>
                     <Route path="/" exact component={Landing} />
                     <Route path="/login" component={Login} />
-                </Switch>
+                </Switch> */}
                 
                 
-                {/* <Switch>
-                  <Route path="/" exact>
-                    <Redirect to="/login" />
+                <Switch>
+                  <Route path="/" exact component={Landing}>
+                    {/* <Redirect to="/login" /> */}
                   </Route>
                   <Route path="/" component={Login} />
-                </Switch> */}
+                </Switch>
             </>}
            </Router>
         </Provider>
