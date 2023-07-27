@@ -1,8 +1,10 @@
 import React, { Fragment, useState } from 'react';
 import { Dialog } from '@headlessui/react';
 import { MenuIcon, XIcon  } from '@heroicons/react/outline';
-import { CloudUploadIcon, LockClosedIcon, DatabaseIcon, CheckIcon  } from '@heroicons/react/solid';
-import Logo from '../Logo.js'
+import { CheckIcon, SearchIcon, CogIcon, PencilIcon  } from '@heroicons/react/solid';
+import Logo from '../Logo.js';
+import backgroundImage from './bg.jpg';
+import screenshot from './screenshot.png';
 
 const navigation = [
   { name: 'Features', href: '#features' },
@@ -15,17 +17,17 @@ const features = [
     name: 'Fine Tuned Generative Models',
     description:
       'Our highly fine tuned generative models will craft the perfect SEO friendly content, description, tags, etc. for your product, helping you focus on all the other aspects of your business.',
-    icon: CloudUploadIcon,
+    icon: PencilIcon,
   },
   {
     name: 'Research Tools',
     description: 'Don\'t reinvent the wheel. We have a growing set of tools that help you analyze top performing listings from other sellers, learn from what they do best, and apply it to your own listings.',
-    icon: LockClosedIcon,
+    icon: SearchIcon,
   },
   {
     name: 'Automation',
     description: 'The more your shop grows, the more you will need to spend time on things that you don\'t want to. Use our tools to automate order tracking, responses to reviews, and more.',
-    icon: DatabaseIcon,
+    icon: CogIcon,
   },
 ];
 
@@ -40,9 +42,9 @@ const LandingPage = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <div className="">
+    <div className="" style={{backgroundImage: `url(${backgroundImage})`, backgroundSize: 'cover'}}>
       {/* Hero Section */}
-      <div className="bg-white">
+      <div className="">
         <header className="absolute inset-x-0 top-0 z-50">
           <nav className="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
             <div className="flex lg:flex-1">
@@ -63,7 +65,7 @@ const LandingPage = () => {
             </div>
             <div className="hidden lg:flex lg:gap-x-12">
               {navigation.map((item) => (
-                <a key={item.name} href={item.href} className="text-sm font-semibold leading-6 text-gray-900">
+                <a key={item.name} href={item.href} className="text-sm font-semibold leading-6 text-gray-900 hover:text-gray-600">
                   {item.name}
                 </a>
               ))}
@@ -179,7 +181,7 @@ const LandingPage = () => {
 
       {/* Feature Section */}
       <section id="features" className="">
-        <div className="overflow-hidden bg-white py-24 sm:py-32">
+        <div className="overflow-hidden py-24 sm:py-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
           <div className="lg:pr-8 lg:pt-4">
@@ -204,11 +206,11 @@ const LandingPage = () => {
             </div>
           </div>
           <img
-            src="https://tailwindui.com/img/component-images/dark-project-app-screenshot.png"
+            src={screenshot}
             alt="Product screenshot"
             className="w-[48rem] max-w-none rounded-xl shadow-xl ring-1 ring-gray-400/10 sm:w-[57rem] md:-ml-4 lg:-ml-0"
-            width={2432}
-            height={1442}
+            width={2000}
+            height={1000}
           />
         </div>
         </div>
@@ -218,7 +220,7 @@ const LandingPage = () => {
       {/* Pricing Section */}
       <section id="pricing" >
         {/* className="p-10 grid grid-cols-1 md:grid-cols-3 gap-4" */}
-        <div className="bg-white py-24 sm:py-32">
+        <div className="py-24 sm:py-32">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl sm:text-center">
           <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Three Simple Plans</h2>
@@ -274,10 +276,11 @@ const LandingPage = () => {
       </section>
 
       {/* Testimonial Section */}
-      <section id="testimonials" className="relative isolate overflow-hidden bg-white px-6 py-24 sm:py-32 lg:px-8">
+      <section id="testimonials" className="relative isolate overflow-hidden px-6 py-24 sm:py-32 lg:px-8">
         <div className="absolute inset-0 -z-10 bg-[radial-gradient(45rem_50rem_at_top,theme(colors.indigo.100),white)] opacity-20" />
         <div className="mx-auto max-w-2xl lg:max-w-4xl">
-          <img className="mx-auto h-12" src="https://tailwindui.com/img/logos/workcation-logo-indigo-600.svg" alt="" />
+        <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Testimonials</h2>
+          {/* <img className="mx-auto h-12" src="https://tailwindui.com/img/logos/workcation-logo-indigo-600.svg" alt="" /> */}
           <figure className="mt-10">
             <blockquote className="text-center text-xl font-semibold leading-8 text-gray-900 sm:text-2xl sm:leading-9">
               <p>
@@ -303,16 +306,16 @@ const LandingPage = () => {
       </section>
 
       <footer>
-      <div className="bg-gray-800 text-white px-6 py-4">
+      <div className="text-white px-6 py-4">
         <div className="container mx-auto flex flex-wrap justify-between items-center">
           <div className="flex items-center text-gray-100">
             <Logo />
           </div>
           <div className="mt-4 lg:mt-0">
-            <a href="/about" className="text-gray-400 hover:text-gray-200 mr-6">About Us</a><br/>
-            <a href="/privacy-policy" className="text-gray-400 hover:text-gray-200">Privacy Policy</a>
+            {/* <a href="/about" className="text-gray-800 hover:text-gray-600 mr-6">About Us</a><br/>
+            <a href="/privacy-policy" className="text-gray-800 hover:text-gray-600">Privacy Policy</a> */}
           </div>
-          <p className="mt-5 text-gray-400 text-sm sm:mt-0 sm:text-right">© 2023 DeGeneratr. All rights reserved.</p>
+          <p className="mt-5 text-gray-800 text-sm sm:mt-0 sm:text-right">© 2023 DeGeneratr. All rights reserved.</p>
         </div>
       </div>
       </footer>
